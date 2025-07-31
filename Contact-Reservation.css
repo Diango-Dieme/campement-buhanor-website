@@ -1,0 +1,679 @@
+ Styles généraux */
+/* Variables CSS pour les couleurs */
+:root {
+  --couleur-primaire-foncee: #45261d;
+  --couleur-accent-marron: #8F543E;
+  --couleur-texte-clair: #CE7650;
+  --couleur-texte-sombre: #3B260E;
+  --couleur-neutre-grise: #AFA099;
+}
+
+
+/* Réinitialisation de base */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base de la typographie */
+.revalia-regular {
+  font-family: "Revalia", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-regular { /* Remplacer par la classe générée par Google Fonts si différente */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Exemple, ajustez selon votre lien Google Fonts */
+  font-style: normal;
+}
+/*site Buhanor*/
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: #000814;
+  color: #3B260E; /* Couleur de texte par défaut */
+}
+mark{
+    background-color: #aacc00;
+    color: black;
+}
+
+.montserrat-<uniquifier> {
+  
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+header {
+    background-color: #45261d;
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    background-color: #000814;
+    
+}
+
+.navbar img{
+  width: 100px; /* Taille du logo dans la nav */
+  height: auto;
+  margin-left: 9px;
+}
+
+
+/* Liens de navigation */
+.nav-links {
+    list-style: none;
+    margin: 5px 50px;
+    padding: 0;
+    display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
+    font-size: 1.7em;
+    gap: 15px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+     font-family: "Revalia";
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.5s ease;
+}
+
+.nav-links a:hover {
+    color:  #CE7650;
+}
+
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none; /* Masqué par défaut sur les grands écrans */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Pour positionner les barres */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus des autres éléments */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styles pour le menu ouvert (JavaScript ajoute la classe .open) */
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+} 
+
+/* ===== Réglages Généraux et Polices ===== */
+
+
+h1, h2 {
+    font-weight: 700;
+}
+
+/* ===== Section Hero ===== */
+.hero {
+    /* Remplacez 'city-background.jpg' par le chemin de votre image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 2)), url('ciel-tropical-campement-buhanor-plage-cap-skirring-copie.jpg');
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Petits points sous le titre */
+.dots {
+    margin-bottom: 20px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 4px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* ===== Section Infos de Contact ===== */
+
+.main-container {
+    display: flex;
+  
+    background-color: #000814;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden; /* Pour contenir les bords arrondis */
+    margin: 0 2%;
+}
+
+/* Section d'informations de contact (à gauche) */
+/* ===== Section Infos de Contact ===== */
+.contact-info {
+    
+    justify-content: space-around;
+    padding: 30px 80px;
+    text-align: center;
+    
+}
+
+.info-card {
+    max-width: 400px;
+    margin: 10px;
+}
+
+.icon-container {
+    font-size: 2.5rem;
+    color: #d9dcd6; /* Couleur  des icônes */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color:#d9dcd6;
+}
+
+.lorem-text {
+    color:#d9dcd6;
+    margin-bottom: 15px;
+    font-size: 1em;
+    text-align: justify;
+}
+
+.highlight {
+    color: #ccdbdc; /* Couleur orange */
+    font-weight: 900;
+    font-size: 2em;
+}
+
+/* Section du formulaire (à droite) */
+.form-section {
+    flex: 1;
+    min-width: 400px; /* Largeur minimale pour cette section */
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.form-section h2 {
+    font-size: 2em;
+    color: #45261d;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+    color: #45261d;
+    font-size: 1em;
+}
+
+/* Styles pour les champs Nom et Prénom côte à côte */
+.name-group {
+    display: inline-block; /* Permet de les aligner */
+    width: calc(50% - 10px); /* Moitié de la largeur moins l'espace */
+    vertical-align: top; /* Alignement en haut */
+}
+
+.name-group:first-child {
+    margin-right: 20px; /* Espace entre Prénom et Nom */
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #000814;
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclut padding et bordure dans la largeur/hauteur */
+    font-size: 1em;
+    color: #45261d;
+    background-color: #fafafa; /* Très légèrement gris pour le fond des champs */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: yellow; /* Bordure bleue au focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+    background-color: #ffffff; /* Fond blanc au focus */
+}
+
+textarea {
+    resize: vertical; /* Permet uniquement le redimensionnement vertical */
+    min-height: 120px; /* Hauteur minimale du textarea */
+}
+
+
+/* Bouton d'envoi */
+button[type="submit"] {
+    background-color: #000814; /* Couleur primaire */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto; /* Largeur auto pour le bouton */
+    display: block; /* Prend sa propre ligne */
+}
+
+button[type="submit"]:hover {
+    background-color: #45261d;
+    transform: translateY(-2px); /* Petit effet de levée au survol */
+}
+
+/* Messages d'erreur et de succès */
+.error-message {
+    color: #dc3545; /* Rouge vif pour les erreurs */
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: none; /* Masqué par défaut */
+}
+
+.success-message {
+    color: #28a745; /* Vert pour le succès */
+    font-size: 1em;
+    text-align: center;
+    margin-top: 25px;
+    padding: 10px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    display: none; /* Masqué par défaut */
+}
+
+/* ===== Section Carte ===== */
+.map-section {
+    width: 100%;
+    height: 450px;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+  /* Styles généraux du footer */
+.footer {
+    background-color: white; /* Couleur de fond verte foncée */
+    color: #45261d;
+    padding: 40px 10px;
+    font-family: "Revalia"; 
+}
+
+/* Section supérieure du footer (localisation, réservations, plateformes) */
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
+    margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
+}
+
+.footer-section {
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: center; /* Alignement du texte à gauche par défaut */
+}
+
+.footer-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    font-size: 1.5em;
+}
+
+.footer-section p {
+       font-family: "Montserrat";
+      font-size: 1.1em;
+     color: #555;
+}
+.footersectionblog{
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: justify; /* Alignement du texte à gauche par défaut */
+
+}
+.footersectionblog h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.footersectionblog p {
+    text-align: none;
+    color: #660708;
+    margin: 0;
+} 
+.footersectionblog a{
+    text-decoration: none;
+     font-family: "Montserrat";
+      font-size: 1.1em;
+     color: #555;
+}
+
+.footer-section a {
+    color: inherit;
+    text-decoration: none;
+}
+/* Styles pour les icônes des plateformes */
+.platform-icons {
+    display: flex;
+    align-items: center;
+}
+
+.platform-icons img {
+    height: 44px; /* Taille des icônes */
+    margin-right: 40px; /* Espace entre les icônes */
+
+}
+
+
+
+/* Section inférieure du footer (logo) */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
+}
+
+.footer-logo {
+    width: 300px;
+    height: auto; /* Hauteur du logo, ajustez selon vos besoins */
+    margin-right: 15px; /* Espace entre le logo et le texte "BUHANOR" */
+}
+
+
+/* Media queries pour la responsivité (facultatif mais recommandé) */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column; /* Empile les sections verticalement sur les petits écrans */
+        align-items: center; /* Centre les sections empilées */
+    }
+
+    .footer-section {
+        width: 100%; /* Chaque section prend toute la largeur */
+        text-align: center; /* Centre le texte des sections */
+    }
+
+    .platform-icons {
+        justify-content: center; /* Centre les icônes sur petits écrans */
+
+    }
+
+    .footer-logo {
+        margin-right: 0; /* Pas de marge à droite quand empilé */
+        margin-bottom: 10px; /* Marge sous le logo quand empilé */
+    }
+}
+/* Media Queries pour les écrans plus petits */
+
+@media (max-width: 1250px) {
+    .nav-links{
+        margin: 5px 40px;
+        font-size: 1.4em;
+    }
+
+}
+
+
+@media (max-width: 999px) {
+
+    .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  #000814;; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.4em;
+        margin: 0px 0px;
+        z-index: 999;
+    }
+
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+  
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+    
+    .contact-info {
+        padding: 22px 5px;
+    }
+
+
+
+}
+
+
+@media (max-width: 799px) {
+    .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  #000814;; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.2em;
+        margin:0px 0px;
+        z-index: 999;
+    }
+
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+  
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+        padding: 0 13px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+
+
+
+
+.hero h1 {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Petits points sous le titre */
+.dots {
+    margin-bottom: 20px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 4px;
+}
+
+.hero p {
+    font-size: 1em;
+    font-weight: 300;
+}
+/* ===== Section Infos de Contact ===== */
+.contact-info {
+        padding: 20px 10px;
+        display: grid;
+        align-items: center;
+}
+
+.lorem-text {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.highlight {
+    font-size: 2.em;
+}
+
+/* ===== Section Infos de Contact ===== */
+     .main-container {
+        flex-direction: column; /* Les sections s'empilent sur petits écrans */
+    }
+
+    .contact-info-section, .form-section {
+        border-right: none;
+        border-bottom: 1px solid #eee; /* Ligne de séparation horizontale */
+        min-width: unset; /* Supprime la largeur minimale */
+        
+        padding: 30px;
+    }
+
+    .contact-info-section {
+        padding-bottom: 20px; /* Moins de padding en bas */
+    }
+
+    .form-section {
+        padding-top: 20px; /* Moins de padding en haut */
+    }
+
+    .name-group {
+        width: 100%; /* Les champs Nom et Prénom prennent toute la largeur */
+        margin-right: 0 !important; /* Annule la marge entre eux */
+        display: block;
+    }
+
+/* ===== Section Carte ===== */
+.map-section {
+    width: 100%;
+  
+}
+
+
+
+
+/* ===== Pied de page (Footer) ===== */
+footer {
+    background-color: black; /* Bleu foncé */
+    padding: 40px 0;
+    text-align: center;
+}
+footer h2{
+    color: white;
+    font-family: "Revalia";
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 7px;
+}
+.logo-icone{
+    text-align: center;
+    gap: 20px;
+}
+
+.trip{
+    width: 17%;
+   
+}
+.maps{
+    width: 10%;
+}
+
+   
+} 
+
+@media (max-width:390px ) {
+   
+   .nav-links{
+    font-size: 1em;
+   }
+}
+

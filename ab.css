@@ -1,0 +1,883 @@
+/* Styles généraux */
+/* Variables CSS pour les couleurs */
+:root {
+  --couleur-primaire-foncee: #45261d;
+  --couleur-accent-marron: #8F543E;
+  --couleur-texte-clair: #CE7650;
+  --couleur-texte-sombre: #3B260E;
+  --couleur-neutre-grise: #AFA099;
+}
+
+
+/* Réinitialisation de base */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base de la typographie */
+.revalia-regular {
+  font-family: "Revalia", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-regular { /* Remplacer par la classe générée par Google Fonts si différente */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Exemple, ajustez selon votre lien Google Fonts */
+  font-style: normal;
+}
+/*site Buhanor*/
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: #f8edeb;
+  color: #3B260E; /* Couleur de texte par défaut */
+}
+
+.montserrat-<uniquifier> {
+  
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+header {
+   
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    background-color:  #45261d;
+    
+}
+
+.navbar img{
+  width: 100px; /* Taille du logo dans la nav */
+  height: auto;
+  margin-left: 9px;
+}
+
+
+/* Liens de navigation */
+.nav-links {
+    list-style: none;
+    margin: 5px 50px;
+    padding: 0;
+    display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
+    font-size: 1.7em;
+    gap: 15px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+     font-family: "Revalia";
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.5s ease;
+}
+
+.nav-links a:hover {
+    color:  #CE7650;
+}
+
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none; /* Masqué par défaut sur les grands écrans */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Pour positionner les barres */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus des autres éléments */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styles pour le menu ouvert (JavaScript ajoute la classe .open) */
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+} 
+
+/* POUR LE WEB COPI COLE */
+
+.LOGO-texte{
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background-color: #f2e9e4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-wrapper {
+    padding: 0 40px;
+}
+
+
+.LOGO-texte h1 {
+    font-family: "Montserrat";
+    font-size: 2.9em;
+    text-align: left;
+    color:  #CE7650;
+}
+.LOGO-texte h2 {
+    font-size: 2em;
+    text-align: left;
+    color: #8F543E;
+}
+
+
+.LOGO-texte h3 {
+    color: #9F553E;
+    font-size: 1.3em;
+}
+
+.LOGO-texte p {
+    font-size: 1.2em;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #45261d;
+}
+
+.logo{
+    width: 15%;
+    margin-top: -4%;
+    margin-bottom: -5%;
+    left: 0;
+}
+
+.reach-out-button {
+            background-color: #f8edeb;
+            color: #45261d;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: fit-content; /* S'adapte au contenu */
+            margin-top: 10px;
+        }
+        .reach-out-button1 {
+            background-color: #45261d;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            width: fit-content; /* S'adapte au contenu */
+            margin-top: 10px;
+        }
+
+
+.BU{
+  padding: 30px 20px;
+  background-color: #8F543E; /* Couleur de fond pour la section contact */
+  margin: 30px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white; /* Texte blanc sur fond marron */
+  text-align: center;
+}
+
+.BU h3{
+    font-size: 2em;
+  color: #45261d;
+  font-family:  "Montserrat";
+}
+
+.BU P{
+    font-size: 1em;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 39px;
+    padding: 0 95px;
+}
+
+.BU1 { /* Logo principal dans la section d'accueil */
+  width: 10%;
+  min-width: 100px; /* Taille minimale pour ne pas disparaître */
+  max-width: 200px; /* Taille maximale */
+  margin: -10px;
+}
+
+/* Styles des sections Chambres et Services (généralisation) */
+.chambre-wrapper, .bar-wrapper{
+    margin: 30px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.chambres, .bare {
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background-color: #f2e9e4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chambres h2, .bare h2 {
+  font-size: 2.5em;
+  color: #CE7650;
+  margin-bottom: 15px;
+}
+
+.chambres h3, .bare h3 {
+  font-size: 1.5em;
+  color: #45261d;
+  margin-bottom: 15px;
+}
+
+
+.chambres p, .bare p , {
+  font-size: 3.5em;
+  color: #3B260E;
+  padding:  20px 30px;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+.chambres img{
+    width: 285px;
+    height: 190px;
+    border-radius: 5px;
+    filter: saturate(200%);
+
+    margin-top: 20px;
+    object-fit: cover;
+}
+.bare img{
+     width: 283px;
+    height: 190px;
+    border-radius: 5px;
+    filter: saturate(200%);
+    
+    margin-top: 20px;
+    object-fit: cover;
+}
+
+/* Logo Buhanor entre sections */
+.Blogo {
+  width: 5%;
+  min-width: 80px;
+  max-width: 150px;
+  display: block; /* Pour centrer avec margin: auto */
+  margin:  auto;
+  text-align: center;
+}
+
+/* Styles de la section Contact */
+.Contact {
+  padding: 30px 20px;
+  background-color: #8F543E; /* Couleur de fond pour la section contact */
+  border-radius: 35px;
+  margin: 30px auto;
+  max-width: 850px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white; /* Texte blanc sur fond marron */
+  text-align: center;
+}
+
+.CON h2 {
+  font-size: 2em;
+  color: white; /* ou une couleur claire cohérente */
+  margin-bottom: 10px;
+}
+
+.CON h4 {
+  font-size: 1.3em;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.CON p {
+  color: white;
+  text-align: center;
+  margin: 0 auto 20px;
+  font-size: 1.1em;
+  max-width: 700px;
+}
+
+.contact-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+
+   .CON2, .CON3 {
+    width: calc(20% - 5px); /* Deux images par ligne */
+}
+
+.CON3{
+    max-width: 75%; /* Limite la taille max */
+    min-width: 35%;
+  height: 20%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+.CON2{
+    max-width: 50%; /* Limite la taille max */
+  height: 10%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+.reviews { 
+    background: linear-gradient(180deg, #f8edeb 20%,  #8F543E 100%);
+    padding: 15px 20px;
+    border-radius: 20px;
+    max-width: 950px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.reviews h2 {
+    color: #CE7650;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    width: 100%;
+}
+
+.review-card { 
+    margin: 0;
+    padding: 25px; 
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    flex: 1 1 calc(33% - 40px);
+    min-width: 280px;
+    max-width: 380px;
+    display: flex; /* Ajouté pour le contenu interne de la carte */
+    flex-direction: column; /* Ajouté pour le contenu interne de la carte */
+    justify-content: space-between; /* Ajouté pour le contenu interne de la carte */
+    transition: transform 0.2s ease; /* Ajouté pour l'effet de survol */
+}
+
+.review-card:hover {
+    transform: translateY(-3px); /* Effet de légère élévation au survol */
+}
+
+.review-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4em;
+    color: #ffb700;
+    font-family: serif;
+    opacity: 0.3;
+}
+
+.review-card p {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #444;
+    font-size: 1.2em;
+    line-height: 1.6;
+    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant */
+}
+
+.review-card span {
+    color: #666;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto; /* Pousse le span vers le bas de la carte */
+}
+
+.review-card span::before {
+    content: '👤';
+    font-size: 1.2em;
+}
+
+.review-card strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 900px) {
+    .review-card {
+        flex: 1 1 calc(50% - 40px); /* 2 colonnes sur les tablettes */
+    }
+}
+
+@media (max-width: 600px) {
+    .review-card {
+        flex: 1 1 100%; /* 1 colonne sur les petits écrans/mobiles */
+        max-width: none; /* Pas de largeur maximale sur mobile */
+    }
+    
+    .reviews {
+        padding: 30px 15px; /* Ajustement du padding pour les petits écrans */
+    }
+    
+    .reviews h2 {
+        font-size: 1.7em; /* Ajustement de la taille du titre pour les petits écrans */
+    }
+}
+
+/* GALERIE DIMAGE */ 
+
+.BU2{
+  padding: 30px 20px;
+  background-color: #45261d; /* Couleur de fond pour la section contact */
+  margin: 0px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white; /* Texte blanc sur fond marron */
+  text-align: center;
+}
+.BU2 h2{
+    font-size: 2.5em;
+    font-family: "Revalia" ;
+}
+.BU2 p{
+    font-size: 1.1em;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 9px auto;
+    padding: 20px;
+    background-color: #45261d;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Hauteur fixe pour les vignettes */
+    object-fit: cover; /* Assure que l'image couvre l'espace sans être déformée */
+    display: block;
+}
+
+/* Styles pour la Lightbox */
+.lightbox {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent noir */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* L'image s'adapte sans être coupée */
+}
+
+.close-btn, .prev-btn, .next-btn {
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn {
+    top: 15px;
+    right: 35px;
+}
+
+.close-btn:hover,
+.close-btn:focus,
+.prev-btn:hover,
+.next-btn:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev-btn {
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+}
+
+  /* Styles généraux du footer */
+.footer {
+    background-color: white; /* Couleur de fond verte foncée */
+    color: #45261d;
+    padding: 40px 10px;
+    font-family: "Revalia"; 
+}
+
+/* Section supérieure du footer (localisation, réservations, plateformes) */
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
+    margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
+}
+
+.footer-section {
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: center; /* Alignement du texte à gauche par défaut */
+}
+
+.footer-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    font-size: 1.5em;
+}
+
+.footer-section p {
+       font-family: "Montserrat";
+      font-size: 1.1em;
+     color: #555;
+}
+.footersectionblog{
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: justify; /* Alignement du texte à gauche par défaut */
+
+}
+.footersectionblog h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.footersectionblog p {
+    text-align: none;
+    color: #660708;
+    margin: 0;
+} 
+.footersectionblog a{
+    text-decoration: none;
+     font-family: "Montserrat";
+      font-size: 1.1em;
+     color: #555;
+}
+
+.footer-section a {
+    color: inherit;
+    text-decoration: none;
+}
+/* Styles pour les icônes des plateformes */
+.platform-icons {
+    display: flex;
+    align-items: center;
+}
+
+.platform-icons img {
+    height: 44px; /* Taille des icônes */
+    margin-right: 40px; /* Espace entre les icônes */
+
+}
+
+
+
+/* Section inférieure du footer (logo) */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
+}
+
+.footer-logo {
+    width: 300px;
+    height: auto; /* Hauteur du logo, ajustez selon vos besoins */
+    margin-right: 15px; /* Espace entre le logo et le texte "BUHANOR" */
+}
+
+
+/* Media queries pour la responsivité (facultatif mais recommandé) */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column; /* Empile les sections verticalement sur les petits écrans */
+        align-items: center; /* Centre les sections empilées */
+    }
+
+    .footer-section {
+        width: 100%; /* Chaque section prend toute la largeur */
+        text-align: center; /* Centre le texte des sections */
+    }
+
+    .platform-icons {
+        justify-content: center; /* Centre les icônes sur petits écrans */
+
+    }
+
+    .footer-logo {
+        margin-right: 0; /* Pas de marge à droite quand empilé */
+        margin-bottom: 10px; /* Marge sous le logo quand empilé */
+    }
+}
+
+/* Media Queries pour les écrans plus petits */
+
+@media (max-width: 1250px) {
+
+    .nav-links{
+        margin: 5px 40px;
+        font-size: 1.4em;
+    }
+
+
+@media (max-width: 999px) {
+
+    .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  #45261d; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.4em;
+        margin: 0px 0px;
+        z-index: 999;
+    }
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+    }
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+    .E-CH P{
+        padding: 0 2px;
+    }
+    .E-CH h1{
+        font-size: 2.2em;
+    }
+    
+}
+
+
+@media (max-width: 799px) {
+     .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  #45261d; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.2em;
+        margin: 0px 0px;
+        z-index: 999;
+    }
+
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+  
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+        padding: 0 13px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+
+.LOGO-texte h1 {
+    font-size: 2.8em;
+  }
+  .LOGO-texte h3 {
+    font-size: 1em;
+  }
+  .LOGO-texte p {
+    font-size: 1em;
+  }
+
+  .logo {
+    width: 25%;
+  }
+
+  .button1{
+    font-size: 25px;
+  }
+  .logo-wrapper {
+    padding: 0 5px;
+}
+
+  .chambres img, .bare img {
+    width: 49%; /* Une seule image par ligne sur mobile */
+    height: ;
+  }
+
+  .bare img {
+    width: 43%; /* Une seule image par ligne sur mobile */
+    height: ;
+  }
+
+  .chambres h1, .bare h2 {
+    font-size: 2em;
+  }
+
+  .chambres h3, .bare h3 {
+    font-size: 1.3em;
+  }
+
+  .chambres p, .bare p , .BU P{
+    font-size: 1em;
+    padding: 2px;
+  }
+
+  .Blogo {
+    width: 15%;
+  }
+
+  .CON h2 {
+    font-size: 1.3em;
+  }
+  .CON h4 {
+    font-size: 1em;
+  }
+  .CON p {
+    font-size: 1em;
+  }
+
+  .CON2 {
+    width: 25%; /* Une seule image par ligne */
+    height: 5%;
+  } 
+
+  .CON3 {
+    WIDTH: 48%;
+    height: 20%;
+  }
+  
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+   }
+   .BU h3{
+     font-size: 1.4em;
+   }
+   
+ 
+}
+
+@media (max-width:390px ) {
+    .LOGO-texte h1{
+        font-size: 1.9rem;
+    }
+     .LOGO-texte h2{
+        font-size: 1.4rem;
+    }
+    .BU P {
+        padding: 1px 3px;
+        margin: 1px 3px;
+        text-align: left;
+    }
+    .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+   }
+   .nav-links{
+    font-size: 1em;
+   }
+   .review-card {
+    padding: 15px;
+   }
+}

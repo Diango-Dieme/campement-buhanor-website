@@ -1,0 +1,683 @@
+ Styles généraux */
+/* Variables CSS pour les couleurs */
+:root {
+  --couleur-primaire-foncee: #45261d;
+  --couleur-accent-marron: #8F543E;
+  --couleur-texte-clair: #CE7650;
+  --couleur-texte-sombre: #3B260E;
+  --couleur-neutre-grise: #AFA099;
+}
+
+/* Réinitialisation de base */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base de la typographie */
+.revalia-regular {
+  font-family: "Revalia", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-regular { /* Remplacer par la classe générée par Google Fonts si différente */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Exemple, ajustez selon votre lien Google Fonts */
+  font-style: normal;
+}
+/*site Buhanor*/
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: black;
+  color: #FFF; /* Couleur de texte par défaut */
+}
+
+.montserrat-<uniquifier> {
+  
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+header {
+    background-color: #45261d;
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    background-color:  black;
+    
+}
+
+.navbar img{
+  width: 100px; /* Taille du logo dans la nav */
+  height: auto;
+  margin-left: 9px; 
+}
+/* Liens de navigation */
+.nav-links {
+    list-style: none;
+    margin: 5px 50px;
+    padding: 0;
+    display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
+    font-size: 1.7em;
+    gap: 15px;
+
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+     font-family: "Revalia";
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.5s ease;
+}
+
+.nav-links a:hover {
+    color: #f20089;
+}
+
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none; /* Masqué par défaut sur les grands écrans */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Pour positionner les barres */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus des autres éléments */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styles pour le menu ouvert (JavaScript ajoute la classe .open) */
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+} 
+
+
+/* ===== Section Hero ===== */
+.hero {
+    /* Remplacez 'city-background.jpg' par le chemin de votre image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 2)), url('construction-traditionnel-terre-buhanor.jpg');
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Petits points sous le titre */
+.dots {
+    margin-bottom: 20px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 4px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.BU1 { /* Logo principal dans la section d'accueil */
+  width: 10%;
+  min-width: 100px; /* Taille minimale pour ne pas disparaître */
+  max-width: 200px; /* Taille maximale */
+  margin: -10px;
+}
+
+.buhanor-section {
+    display: flex; /* Utilise Flexbox pour aligner les enfants (texte et image) */
+    align-items: center; /* Centre les éléments verticalement */
+    padding: 50px 100px; /* Ajoute de l'espace autour de la section. Adaptez selon votre design Canva */
+    gap: 50px; /* Ajoute de l'espace entre les colonnes (texte et image) */
+    background-color: linear-gradient(rgba(0, 0, 0, 2), rgba(0, 0, 0, 2)),black; /* Couleur de fond de la section si elle n'est pas blanche */
+
+}
+
+.buhanor-content {
+    flex: 1; /* Permet à cette colonne de prendre l'espace disponible */
+    max-width: 55%; /* Limite la largeur du contenu textuel. Ajustez si l'image est plus large */
+    padding-right: 20px; /* Ajoute un petit espace à droite du texte si nécessaire */
+}
+
+.buhanor-content h1 {
+    font-family: 'VotrePoliceDuTitre', sans-serif; /* Remplacez par la police utilisée dans Canva */
+    font-size: 3em; /* Ajustez la taille de la police pour correspondre à votre design */
+    color: #adb5bd; /* Couleur du texte du titre */
+    margin-bottom: 10px; /* Espace sous le titre */
+    line-height: 1.2; /* Hauteur de ligne */
+}
+
+.buhanor-content .tagline {
+    font-family: 'VotrePoliceDuTexte', sans-serif; /* Remplacez par la police de l'accroche */
+    font-size: 1.7em; /* Taille de la police pour l'accroche */
+    color: #adb5bd;
+    margin-bottom: 5px; /* Espace sous l'accroche */
+}
+
+.buhanor-content p {
+    font-family: 'VotrePoliceDuTexte', sans-serif; /* Remplacez par la police du paragraphe */
+    font-size: 1em; /* Taille de la police pour le paragraphe */
+    line-height: 1.6; /* Espacement des lignes pour la lisibilité */
+    color: #adb5bd; /* Couleur du texte du paragraphe */
+}
+
+.buhanor-content p strong {
+    font-weight: bold; /* S'assure que le texte en gras est bien visible */
+}
+
+
+.buhanor-image {
+    flex: 1; /* Permet à l'image de prendre l'espace disponible */
+    max-width: 35%; /* Limite la largeur de la colonne image */
+    display: flex; /* Pour centrer l'image si elle est plus petite que son conteneur */
+    justify-content: center;
+    align-items: center;
+}
+
+.buhanor-image img {
+    max-width: 80%; /* S'assure que l'image ne dépasse pas la largeur de son conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    border-radius: 8px; /* Si l'image a des coins arrondis dans votre design */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Si l'image a une ombre */
+}
+
+/* Media Queries pour la responsivité (sur petits écrans) */
+@media (max-width: 768px) {
+    .buhanor-section {
+        flex-direction: column; /* Les éléments s'empilent verticalement sur les petits écrans */
+        padding: 30px 20px; /* Moins de padding sur les petits écrans */
+    }
+
+    .buhanor-content{
+        max-width: 100%; /* Les deux colonnes prennent toute la largeur disponible */
+        padding-right: 0;
+    }
+
+    .buhanor-image {
+        max-width: 70%; /* Les deux colonnes prennent toute la largeur disponible */
+        padding-right: 0;
+    }
+}
+
+.aliou-dieme-section {
+    padding: 80px 100px; /* Adaptez le padding selon l'espacement dans Canva */
+    background-color: #e9ecef; /* Une couleur de fond légèrement différente si nécessaire */
+    text-align: center; /* Pour centrer les titres du haut */
+}
+
+.aliou-dieme-section .section-top-title {
+    font-family: 'VotrePoliceDuTitreSecondaire', sans-serif; /* Police pour "Une Vision Née..." */
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 5px;
+    letter-spacing: 1px; /* Si les lettres sont espacées */
+}
+
+.aliou-dieme-section .aliou-dieme-name {
+    font-family: 'VotrePolicePrincipale', sans-serif; /* Police pour "Aliou Dieme" */
+    font-size: 4em; /* Ajustez la taille de la police */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 50px; /* Espace sous le nom avant le contenu */
+}
+
+.aliou-dieme-content-wrapper {
+    display: flex; /* Active Flexbox pour aligner l'image et les descriptions */
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: flex-start; /* Aligne le début des éléments verticalement (le haut de l'image avec le haut du texte) */
+    gap: 60px; /* Espace entre l'image et le bloc de descriptions */
+    max-width: 1200px; /* Limite la largeur du contenu pour éviter qu'il ne s'étire trop */
+    margin: 0 auto; /* Centre le conteneur sur la page */
+    text-align: left; /* Rétablit l'alignement du texte à gauche pour les descriptions */
+}
+
+.aliou-dieme-image {
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+    width: 400px; /* Largeur fixe pour l'image, ajustez si nécessaire */
+    height: auto; /* Maintient la proportion */
+    /* Assurez-vous que la taille de l'image correspond à celle dans Canva */
+}
+
+.aliou-dieme-image img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Supprime l'espace sous l'image */
+    
+}
+
+.aliou-dieme-description {
+    flex-grow: 1; /* Permet à ce bloc de prendre l'espace restant */
+    display: flex; /* Active Flexbox pour les deux blocs de description */
+    flex-direction: column; /* Les blocs s'empilent verticalement */
+    gap: 30px; /* Espace entre les deux blocs de description */
+}
+
+.description-block h3 {
+    font-family: 'VotrePoliceDeSousTitre', sans-serif; /* Police pour les titres des blocs de description */
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.description-block p {
+    font-family: 'VotrePoliceDuTexte', sans-serif; /* Police pour les paragraphes de description */
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 992px) {
+    .aliou-dieme-content-wrapper {
+        flex-direction: column; /* L'image et les descriptions s'empilent */
+        align-items: center; /* Centre les éléments dans la colonne */
+        gap: 40px;
+    }
+
+    .aliou-dieme-image {
+        width: 80%; /* L'image prend plus de largeur sur les écrans moyens */
+        max-width: 400px; /* Mais ne dépasse pas une certaine taille */
+    }
+
+    .aliou-dieme-description {
+        width: 100%; /* Les descriptions prennent toute la largeur disponible */
+        padding: 0 20px; /* Un peu de padding pour ne pas coller aux bords */
+    }
+
+    .aliou-dieme-section .aliou-dieme-name {
+        font-size: 3em; /* Réduire la taille du nom sur les petits écrans */
+    }
+}
+
+@media (max-width: 768px) {
+    .aliou-dieme-section {
+        padding: 40px 20px; /* Plus petit padding sur les très petits écrans */
+    }
+
+    .aliou-dieme-section .aliou-dieme-name {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+}
+.final-sections-wrapper {
+    padding: 80px 100px; /* Adaptez le padding général */
+    background-color: #ffffff; /* Couleur de fond de cette section */
+    max-width: 1200px; /* Limite la largeur du contenu */
+    margin: 0 auto; /* Centre le wrapper sur la page */
+}
+
+.content-block {
+    display: flex; /* Active Flexbox pour les paires texte/image */
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 60px; /* Espace entre le texte et l'image */
+    margin-bottom: 80px; /* Espace entre chaque bloc de contenu */
+    text-align: left; /* Assure que le texte est aligné à gauche */
+}
+
+/* Styles spécifiques pour le bloc texte à gauche, image à droite */
+.left-text-right-image {
+    /* C'est la disposition par défaut de flex, donc pas de flex-direction spécifique ici */
+}
+
+/* Styles spécifiques pour le bloc image à gauche, texte à droite */
+.left-image-right-text {
+    flex-direction: row-reverse; /* Inverse l'ordre des éléments (image puis texte) */
+}
+
+.content-block .text-content {
+    flex: 1; /* Permet au texte de prendre l'espace disponible */
+}
+
+.content-block .text-content h2 {
+    font-family: 'VotrePoliceDeTitreSection', sans-serif; /* Police pour les titres de section */
+    font-size: 2.2em; /* Ajustez la taille de la police */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.content-block .text-content p {
+    font-family: 'VotrePoliceDuTexte', sans-serif; /* Police pour les paragraphes */
+    font-size: 1em;
+    line-height: 1.6;
+    color: #444;
+}
+.text-content a{
+    text-decoration: none;
+    color: #f07167;
+}
+
+
+.content-block .image-content {
+    flex: 1; /* Permet à l'image de prendre l'espace disponible */
+    flex-shrink: 0; /* Empêche l'image de rétrécir excessivement */
+    max-width: 50%; /* Limite la largeur de la colonne image */
+    /* Vous pouvez définir une largeur fixe si les images ont une taille spécifique dans votre design */
+    /* width: 400px; */
+}
+
+.content-block .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Si les images ont des coins arrondis */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Si les images ont une ombre */
+}
+
+/* Style de la ligne séparatrice */
+.section-separator {
+    border: none;
+    border-top: 2px solid #eee; /* Une ligne fine et claire */
+    margin: 60px auto; /* Espace au-dessus et en dessous, centré */
+    width: 50%; /* La ligne ne prend pas toute la largeur */
+}
+
+/* Media Queries pour la responsivité */
+@media (max-width: 992px) {
+    .final-sections-wrapper {
+        padding: 60px 40px;
+    }
+
+    .content-block {
+        flex-direction: column; /* Les éléments s'empilent sur les écrans plus petits */
+        align-items: center; /* Centrer les éléments empilés */
+        margin-bottom: 60px;
+        text-align: center; /* Centrer le texte aussi */
+    }
+
+    /* Les blocs d'image/texte inversés n'ont plus d'effet de "reverse" en colonne */
+    .left-image-right-text {
+        flex-direction: column; /* Revenir à la colonne pour tous */
+    }
+
+    .content-block .text-content,
+    .content-block .image-content {
+        max-width: 100%; /* Ils prennent toute la largeur disponible */
+        width: 100%;
+    }
+
+    .content-block .image-content img {
+        width: 80%; /* L'image peut être plus petite pour ne pas être trop grande */
+        max-width: 400px; /* Mais pas plus que ça */
+    }
+}
+
+@media (max-width: 768px) {
+    .final-sections-wrapper {
+        padding: 40px 20px;
+    }
+
+    .content-block .text-content h2 {
+        font-size: 1.8em;
+    }
+    .text-content p{
+        text-align: left;
+    }
+}
+  
+
+
+  /* Styles généraux du footer */
+.footer {
+    background-color: white; /* Couleur de fond verte foncée */
+    color: #45261d;
+    padding: 40px 10px;
+    font-family: "Revalia"; 
+}
+
+/* Section supérieure du footer (localisation, réservations, plateformes) */
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
+    margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
+}
+
+.footer-section {
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: center; /* Alignement du texte à gauche par défaut */
+}
+
+.footer-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    font-size: 1.5em;
+}
+
+.footer-section p {
+       font-family: "Montserrat";
+      font-size: 1.1em;
+     color: #555;
+}
+.footersectionblog{
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: justify; /* Alignement du texte à gauche par défaut */
+
+}
+.footersectionblog h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.footersectionblog p {
+    text-align: none;
+    color: #660708;
+    margin: 0;
+} 
+.footersectionblog a{
+    text-decoration: none;
+     font-family: "Montserrat";
+      font-size: 1.1em;
+     color: #555;
+}
+
+.footer-section a {
+    color: inherit;
+    text-decoration: none;
+}
+/* Styles pour les icônes des plateformes */
+.platform-icons {
+    display: flex;
+    align-items: center;
+}
+
+.platform-icons img {
+    height: 44px; /* Taille des icônes */
+    margin-right: 40px; /* Espace entre les icônes */
+
+}
+
+
+
+/* Section inférieure du footer (logo) */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
+}
+
+.footer-logo {
+    width: 300px;
+    height: auto; /* Hauteur du logo, ajustez selon vos besoins */
+    margin-right: 15px; /* Espace entre le logo et le texte "BUHANOR" */
+}
+
+
+/* Media queries pour la responsivité (facultatif mais recommandé) */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column; /* Empile les sections verticalement sur les petits écrans */
+        align-items: center; /* Centre les sections empilées */
+    }
+
+    .footer-section {
+        width: 100%; /* Chaque section prend toute la largeur */
+        text-align: center; /* Centre le texte des sections */
+    }
+
+    .platform-icons {
+        justify-content: center; /* Centre les icônes sur petits écrans */
+
+    }
+
+    .footer-logo {
+        margin-right: 0; /* Pas de marge à droite quand empilé */
+        margin-bottom: 10px; /* Marge sous le logo quand empilé */
+    }
+}
+/* Media Queries pour les écrans plus petits */
+
+@media (max-width: 1250px) {
+
+    .nav-links{
+        margin: 5px 40px;
+        font-size: 1.4em;
+    }
+    .buhanor-section{
+        padding: 30px 40px;
+    }
+}
+
+
+@media (max-width: 999px) {
+
+    .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  black; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.4em;
+        margin: 0px 0px;
+        z-index: 999;
+    }
+
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+  
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+
+    
+   
+
+}
+
+
+@media (max-width: 799px) {
+    .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  black;; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.2em;
+        margin: 0px 0px;
+        z-index: 999;
+    }
+
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+  
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+        padding: 0 13px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+}
+
+@media (max-width:390px ) {
+   
+   .nav-links{
+    font-size: 1em;
+   }
+}

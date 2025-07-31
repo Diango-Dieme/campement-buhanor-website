@@ -1,0 +1,504 @@
+ Styles généraux */
+/* Variables CSS pour les couleurs */
+:root {
+  --couleur-primaire-foncee: #45261d;
+  --couleur-accent-marron: #8F543E;
+  --couleur-texte-clair: #CE7650;
+  --couleur-texte-sombre: #3B260E;
+  --couleur-neutre-grise: #AFA099;
+}
+
+/* Réinitialisation de base */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base de la typographie */
+.revalia-regular {
+  font-family: "Revalia", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.montserrat-regular { /* Remplacer par la classe générée par Google Fonts si différente */
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Exemple, ajustez selon votre lien Google Fonts */
+  font-style: normal;
+}
+/*site Buhanor*/
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+  background: black;
+  color: #3B260E; /* Couleur de texte par défaut */
+}
+
+.montserrat-<uniquifier> {
+  
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+header {
+    background-color: #45261d;
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    background-color:  black;
+    
+}
+
+.navbar img{
+  width: 100px; /* Taille du logo dans la nav */
+  height: auto;
+  margin-left: 9px; 
+}
+/* Liens de navigation */
+.nav-links {
+    list-style: none;
+    margin: 5px 50px;
+    padding: 0;
+    display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
+    font-size: 1.7em;
+    gap: 15px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+     font-family: "Revalia";
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.5s ease;
+}
+
+.nav-links a:hover {
+    color:  #CE7650;
+}
+
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none; /* Masqué par défaut sur les grands écrans */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Pour positionner les barres */
+    z-index: 1000; /* Assurez-vous qu'il est au-dessus des autres éléments */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styles pour le menu ouvert (JavaScript ajoute la classe .open) */
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+} 
+
+
+/* ===== Section Hero ===== */
+.hero {
+    /* Remplacez 'city-background.jpg' par le chemin de votre image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url('batiment-traditionnel-art-diola-campement-buhanor.jpg');
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Petits points sous le titre */
+.dots {
+    margin-bottom: 20px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 4px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* GALERIE DIMAGE */ 
+
+.BU1 { /* Logo principal dans la section d'accueil */
+  width: 10%;
+  min-width: 100px; /* Taille minimale pour ne pas disparaître */
+  max-width: 200px; /* Taille maximale */
+  margin: -10px;
+}
+
+.BU2{
+  padding: 30px 0px;
+  background-color: black; /*  Couleur de fond pour la section contact */
+  margin: 3px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white; /* Texte blanc sur fond marron */
+  text-align: center;
+}
+.BU2 h2{
+    font-size: 2.5em;
+    font-family: "Revalia" ;
+    color: #d9dcd6;
+}
+.BU2 p{
+    font-size: 1.3em;
+    color: #d9dcd6;
+    padding: 0 60PX;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1280px;
+    margin: 9px auto;
+    padding: 10px;
+    background-color: NONE;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.9);
+}
+
+.gallery-item {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Hauteur fixe pour les vignettes */
+    object-fit: cover; /* Assure que l'image couvre l'espace sans être déformée */
+    display: block;
+}
+
+/* Styles pour la Lightbox */
+.lightbox {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent noir */
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* L'image s'adapte sans être coupée */
+}
+
+.close-btn, .prev-btn, .next-btn {
+    position: absolute;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn {
+    top: 15px;
+    right: 35px;
+}
+
+.close-btn:hover,
+.close-btn:focus,
+.prev-btn:hover,
+.next-btn:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev-btn {
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+}
+
+  /* Styles généraux du footer */
+.footer {
+    background-color: black; /* Couleur de fond verte foncée */
+    color: white;
+    padding: 40px 10px;
+    font-family: "Revalia"; 
+}
+
+/* Section supérieure du footer (localisation, réservations, plateformes) */
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
+    margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
+}
+
+.footer-section {
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: center; /* Alignement du texte à gauche par défaut */
+}
+
+.footer-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    font-size: 1.5em;
+}
+
+.footer-section p {
+       font-family: "Montserrat";
+      font-size: 1.1em;
+     color: white;
+}
+.footersectionblog{
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: justify; /* Alignement du texte à gauche par défaut */
+
+}
+.footersectionblog h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.footersectionblog p {
+    text-align: none;
+    color: white;
+    margin: 0;
+} 
+.footersectionblog a{
+    text-decoration: none;
+     font-family: "Montserrat";
+      font-size: 1.1em;
+     color: white;
+}
+
+.footer-section a {
+    color: inherit;
+    text-decoration: none;
+}
+/* Styles pour les icônes des plateformes */
+.platform-icons {
+    display: flex;
+    align-items: center;
+}
+
+.platform-icons img {
+    height: 44px; /* Taille des icônes */
+    margin-right: 40px; /* Espace entre les icônes */
+
+}
+
+
+
+/* Section inférieure du footer (logo) */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
+}
+
+.footer-logo {
+    width: 300px;
+    height: auto; /* Hauteur du logo, ajustez selon vos besoins */
+    margin-right: 15px; /* Espace entre le logo et le texte "BUHANOR" */
+}
+
+
+/* Media queries pour la responsivité (facultatif mais recommandé) */
+
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column; /* Empile les sections verticalement sur les petits écrans */
+        align-items: center; /* Centre les sections empilées */
+    }
+
+    .footer-section {
+        width: 100%; /* Chaque section prend toute la largeur */
+        text-align: center; /* Centre le texte des sections */
+    }
+
+    .platform-icons {
+        justify-content: center; /* Centre les icônes sur petits écrans */
+
+    }
+
+    .footer-logo {
+        margin-right: 0; /* Pas de marge à droite quand empilé */
+        margin-bottom: 10px; /* Marge sous le logo quand empilé */
+    }
+}
+
+
+/* Media Queries pour les écrans plus petits */
+
+@media (max-width: 1250px) {
+
+    .nav-links{
+        margin: 5px 40px;
+        font-size: 1.4em;
+    }
+ }
+@media (max-width: 999px) {
+
+    .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  black;; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.4em;
+        margin: 0px 0px;
+        z-index: 999;
+    }
+
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+  
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+
+
+}
+
+@media (max-width: 799px) {
+    .nav-links {
+        display: none; /* Masque les liens par défaut sur les petits écrans */
+        flex-direction: column;
+        width: 25%;
+        background-color:  black;; /* Couleur de fond pour le menu ouvert */
+        position: absolute;
+        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        right: 0;
+        text-align: center;
+        padding: 14px 0px;
+        font-size: 1.2em;
+        margin: 0px 0px;
+        z-index: 999;
+    }
+
+    .navbar img{
+         max-width: 150px; /* Taille du logo dans la nav */
+        height: auto;
+  
+    }
+
+    .nav-links.active {
+        display: flex; /* Affiche les liens quand le menu est actif */
+        padding: 0 13px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+    .gallery-container {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  .BU2 p{
+    font-size: 1em;
+    color: #d9dcd6;
+  }
+}
+
+@media (max-width:390px ) {
+   
+   .nav-links{
+    font-size: 1em;
+   }
+}
+
