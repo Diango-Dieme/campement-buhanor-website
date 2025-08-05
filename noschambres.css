@@ -66,7 +66,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 9px;
+  margin-left: 20px;
 }
 
 /* Liens de navigation */
@@ -75,7 +75,7 @@ header {
     margin: 4px 50px;
     padding: 0;
     display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
-    font-size: 1.7em;
+    font-size: 1.3em;
     gap: 15px;
 }
 
@@ -461,7 +461,7 @@ line-height: 1.5;
 
  /* Section Bar */
         .bar-section {
-            background: linear-gradient(100deg, white 0%, #ffe1a8 100%);
+            background: linear-gradient(180deg, white 30%, #ffe1a8 90%);
             padding: 10px 0;
             
         }
@@ -709,6 +709,12 @@ line-height: 1.5;
     flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
     margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
 }
+.footerr { 
+            text-align: center; 
+            padding: 2rem; 
+            background-color: #020c1b; 
+            color: #8892b0; 
+        } 
 
 .footer-section {
     margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */

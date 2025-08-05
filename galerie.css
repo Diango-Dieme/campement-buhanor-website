@@ -65,7 +65,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 9px; 
+  margin-left: 20px; 
 }
 /* Liens de navigation */
 .nav-links {
@@ -73,7 +73,7 @@ header {
     margin: 5px 50px;
     padding: 0;
     display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
-    font-size: 1.7em;
+    font-size: 1.3em;
     gap: 15px;
 }
 
@@ -370,6 +370,12 @@ header {
     align-items: center;
     flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
 }
+.footerr { 
+            text-align: center; 
+            padding: 2rem; 
+            background-color: #020c1b; 
+            color: #8892b0; 
+        } 
 
 .footer-logo {
     width: 300px;

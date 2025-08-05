@@ -66,9 +66,9 @@ header {
 }
 
 .navbar img{
-  width: 140px; /* Taille du logo dans la nav */
+  width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 9px; 
+  margin-left: 20px; 
 }
 /* Liens de navigation */
 .nav-links {
@@ -76,7 +76,7 @@ header {
     margin: 5px 59px;
     padding: 0;
     display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
-    font-size: 1.7em;
+    font-size: 1.3em;
     gap: 15px;
 }
 
@@ -360,6 +360,13 @@ header {
             padding: 40px 0; /* Padding pour le contenu du footer */
             margin-top: 40px; /* Espace au-dessus du footer */
         }
+
+        .footerr { 
+            text-align: center; 
+            padding: 2rem; 
+            background-color: #A96668; 
+            color: white; 
+        } 
 
         /* Section Réservé maintenant (maintenant dans le footer) */
         .reserve-section {

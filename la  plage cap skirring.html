@@ -137,8 +137,8 @@
                 <a href="reservation-contact.html" class="reach-out-button">réservation</a>
             </div>
         </section>
-         <p>&copy; // Copyright 2025 DIANGO - Tous droits réservés</p>
     </footer>
+    <p class="footerr">&copy; // Copyright 2025 DIANGO - Tous droits réservés</p>
      <div class="lightbox" id="lightbox">
         <span class="close-btn">&times;</span>
         <span class="prev-btn">&#10094;</span>
@@ -147,6 +147,66 @@
     </div>
      <script src="script.js"></script> 
 </body>
+<script >
+           document.addEventListener("DOMContentLoaded", function() {
+  // Sélectionne toutes les images qui ont un src (et pas de data-src)
+  const images = document.querySelectorAll("img[src]:not([data-src])");
+  
+  if (!images.length) return;
+
+  const lazyLoad = function() {
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            
+            // Charge l'image en restaurant le src depuis data-src
+            img.src = img.dataset.src;
+            if (img.dataset.srcset) {
+                img.srcset = img.dataset.srcset;
+            }
+            
+            img.classList.add('loaded');
+            observer.unobserve(img);
+          }
+        });
+      }, { rootMargin: "200px 0px" });
+
+      images.forEach(function(img) {
+        // Déplace l'URL de l'image de 'src' vers 'data-src'
+        img.dataset.src = img.src;
+        img.src = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="; // Placeholder vide
+        
+        // On observe l'image
+        observer.observe(img);
+      });
+    } else {
+      // Fallback pour anciens navigateurs (à adapter pour le data-src)
+      const lazyLoadFallback = function() {
+        images.forEach(function(img) {
+          if (img.getBoundingClientRect().top <= window.innerHeight + 200) {
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+                if (img.dataset.srcset) {
+                    img.srcset = img.dataset.srcset;
+                }
+                img.classList.add('loaded');
+            }
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', lazyLoadFallback);
+      window.addEventListener('resize', lazyLoadFallback);
+      window.addEventListener('orientationchange', lazyLoadFallback);
+      lazyLoadFallback();
+    }
+  };
+
+  lazyLoad();
+});
+      </script>
 </html>
 
 
