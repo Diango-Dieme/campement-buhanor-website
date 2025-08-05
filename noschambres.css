@@ -31,7 +31,7 @@ body, h1, h2, h3, p, ul, li {
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
-  background: #e7e7de;
+  background: #000610;
   color: #3B260E; /* Couleur de texte par défaut */
 }
 
@@ -59,7 +59,7 @@ header {
     width: 100%;
     left: 0px;
     right: 0px;
-    background-color:  #45261d;
+    background-color: #000814;
     
 }
 
@@ -131,9 +131,8 @@ header {
 
 /* ===== Section Hero ===== */
 .hero {
-    /* Remplacez 'city-background.jpg' par le chemin de votre image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.0)), url('plus-belle-plage-senegal-cap-skirring-buhanor.jpg');
-    height: 400px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)), url('plus-belle-plage-senegal-cap-skirring-buhanor.jpg');
+    height: 350px;
     background-position: center;
     background-size: cover;
     color: white;
@@ -191,7 +190,7 @@ header {
         }
 
          .container0 {
-max-width: 1200px;
+             background: linear-gradient(180deg, #E0E1DB 20%, #000610 89%);
  margin: 0 auto;
  padding: 10px 40px;
  }
@@ -206,12 +205,12 @@ max-width: 1200px;
  font-weight: bold;
  letter-spacing: 2px;
  margin-bottom: 10px;
- color: #333;
+ color: #000814;
  }
 
  .header p {
  font-size: 1.1em;
- color: #666;
+ color: #FFF;
 line-height: 1.5;
  }
         .container {
@@ -222,7 +221,6 @@ line-height: 1.5;
 
         /* Section Bistro */
         .bistro-section {
-            background: linear-gradient(135deg, #f5f3f0 0%, #ebe8e3 100%);
             padding: 20px 0;
             display: flex;
             align-items: center;
@@ -267,12 +265,12 @@ line-height: 1.5;
             font-weight: bold;
             letter-spacing: 3px;
             margin-bottom: 5px;
-            color: #2c2c2c;
+            color: #e8e9f3;
         }
 
         .bistro-subtitle {
             font-size: 1.2rem;
-            color: #666;
+            color: #c2d3cd;
             margin-bottom: 2px;
             letter-spacing: 1px;
         }
@@ -280,7 +278,7 @@ line-height: 1.5;
         .bistro-description {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #555;
+            color: #a9b2ac;
             margin-bottom: 2px;
         }
 
@@ -291,32 +289,24 @@ line-height: 1.5;
         .price {
             font-size: 2rem;
             font-weight: bold;
-            color: #2c2c2c;
+            color: #FFF;
             margin-bottom: 1px;
         }
 
         .price-details {
             font-size: 1.1rem;
-            color: #666;
+            color: #FFF;
             margin-bottom: 5px;
         }
 
         
-         
-
-.BU1-CH { /* Logo principal dans la section d'accueil */
-  width: 10%;
-  min-width: 100px; /* Taille minimale pour ne pas disparaître */
-  max-width: 200px; /* Taille maximale */
-  margin-bottom: -15px;
-}
 
 .BU-CH1{
   padding: 10px 40px;
-  background-color: white; /* Couleur de fond pour la section contact */
+  background-color: #000814; /* Couleur de fond pour la section contact */
   margin: 5px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #45261d; /* Texte blanc sur fond marron */
+  color: white; /* Texte blanc sur fond marron */
   text-align: center;
 }
 .BU-CH1 h3{
@@ -352,11 +342,12 @@ line-height: 1.5;
         }
 
         .equipement-card {
-            background-color: #f8f9fa;
+            background-color: black;
             border-radius: 20px;
             padding: 40px 20px;
             width: 250px;
             height: 250px;
+            border: 2px solid #212121;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -373,7 +364,8 @@ line-height: 1.5;
         .icon-container {
             width: 80px;
             height: 80px;
-            background-color: white;
+            background-color: black;
+            border: 2px solid #212121;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -383,11 +375,11 @@ line-height: 1.5;
 
         .icon {
             font-size: 40px;
-            color: #666;
+            color: white;
         }
 
         .equipement-text {
-            color: #333;
+            color: white;
             font-size: 16px;
             line-height: 1.4;
             font-weight: 500;
@@ -427,7 +419,7 @@ line-height: 1.5;
         }
 
 .reach-out-button {
-           background: #2c2c2c;
+           background: #22223b;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -443,7 +435,7 @@ line-height: 1.5;
         }
 
   .reach-out-button1 {
-            background-color: #45261d;
+            background-color: black;
             color: white;
             padding: 15px 30px;
             border: none;
@@ -453,6 +445,7 @@ line-height: 1.5;
             text-align: center;
             text-decoration: none;
             display: inline-block;
+            border: 1px solid grey;
              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
             width: fit-content; /* S'adapte au contenu */
             margin-top: 10px;
@@ -461,7 +454,7 @@ line-height: 1.5;
 
  /* Section Bar */
         .bar-section {
-            background: linear-gradient(180deg, white 30%, #ffe1a8 90%);
+            background: linear-gradient(180deg, #000814  30%, black 90%);
             padding: 10px 0;
             
         }
@@ -470,7 +463,7 @@ line-height: 1.5;
             text-align: center;
             font-size: 3rem;
             font-weight: normal;
-            color: #2c2c2c;
+            color: #FFF;
             margin-bottom: 10px;
             letter-spacing: 2px;
         }
@@ -497,12 +490,12 @@ line-height: 1.5;
         .bar-item h3 {
             font-size: 2rem;
             margin-bottom: 10px;
-            color: #2c2c2c;
+            color: #FFF;
         }
 
-.bar-item h4 {
+         .bar-item h4 {
             font-size: 1.3rem;
-            color: #666;
+            color: #FFF;
             margin-bottom: 20px;
             font-weight: normal;
         }
@@ -510,7 +503,7 @@ line-height: 1.5;
         .bar-item p {
             font-size: 1.1rem;
             line-height: 1.4;
-            color: #555;
+            color: #edf2f4;
         }
 
         .bar-image1 {
@@ -587,7 +580,7 @@ line-height: 1.5;
 
 .BU2{
   padding: 30px 20px;
-  background-color: #45261d; /* Couleur de fond pour la section contact */
+  background-color: black; /* Couleur de fond pour la section contact */
   margin: 0px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: white; /* Texte blanc sur fond marron */
@@ -608,7 +601,7 @@ line-height: 1.5;
     max-width: 1200px;
     margin: 9px auto;
     padding: 20px;
-    background-color: #45261d;
+    background-color: black;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.9);
 }
@@ -693,10 +686,11 @@ line-height: 1.5;
 }
 
 
+ 
   /* Styles généraux du footer */
 .footer {
-    background-color: white; /* Couleur de fond verte foncée */
-    color: #45261d;
+    background-color: #000814; /* Couleur de fond verte foncée */
+    color: white;
     padding: 40px 10px;
     font-family: "Revalia"; 
 }
@@ -709,12 +703,6 @@ line-height: 1.5;
     flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
     margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
 }
-.footerr { 
-            text-align: center; 
-            padding: 2rem; 
-            background-color: #020c1b; 
-            color: #8892b0; 
-        } 
 
 .footer-section {
     margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
@@ -731,7 +719,7 @@ line-height: 1.5;
 .footer-section p {
        font-family: "Montserrat";
       font-size: 1.1em;
-     color: #555;
+     color: white;
 }
 .footersectionblog{
     margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
@@ -746,14 +734,14 @@ line-height: 1.5;
 
 .footersectionblog p {
     text-align: none;
-    color: #660708;
+    color: white;
     margin: 0;
 } 
 .footersectionblog a{
     text-decoration: none;
      font-family: "Montserrat";
       font-size: 1.1em;
-     color: #555;
+     color: white;
 }
 
 .footer-section a {
@@ -772,6 +760,8 @@ line-height: 1.5;
 
 }
 
+
+
 /* Section inférieure du footer (logo) */
 .footer-bottom {
     display: flex;
@@ -779,7 +769,12 @@ line-height: 1.5;
     align-items: center;
     flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
 }
-
+.footerr { 
+            text-align: center; 
+            padding: 2rem; 
+            background-color: #020c1b; 
+            color: #8892b0; 
+        } 
 .footer-logo {
     width: 300px;
     height: auto; /* Hauteur du logo, ajustez selon vos besoins */
@@ -820,20 +815,19 @@ line-height: 1.5;
             }
 
             .bistro-images {
-                grid-template-columns: 1fr;
-                width: 85%;
-                height: 90%;
+                width: 90%;
+                height: 200;
                 margin-left: 45px;
                 margin-right: 0;
               
             }
 
             .bistro-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .bar-title {
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
 
             .price {
@@ -981,6 +975,9 @@ line-height: 1.5;
     .hamburger-menu {
         display: block; /* Affiche le menu hamburger sur les petits écrans */
     }
+    .hero {
+        height: 200px;
+    }
 
      .header {
  text-align: center;
@@ -990,17 +987,37 @@ line-height: 1.5;
  .header h2 {
  font-size: 1.5em;
  font-weight: bold;
- letter-spacing: 2px;
  margin-bottom: 10px;
- color: #333;
+ text-align: center;
+
  }
 
  .header p {
  font-size: 1em;
- color: #666;
-line-height: 1.4;
+ color: white;
+line-height: 1.9;
+text-align: justify;
  }
+ .bistro-image img{
+    width: 90%;
+    height: 200px;
+    object-fit: cover;
+ }
+ .bistro-description{
+    font-size: 1rem;
+    line-height: 1.8;
+    }
+ .bar-item p{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    
+ }
+ .bar-image1 {
+    width: 55%;
+    height: 200px;
 
+ }
+    .
     .BU-CH h3{
         font-size: 1.em;
         padding: 0 5px;
@@ -1091,9 +1108,6 @@ line-height: 1.4;
 
 .BU2{
   padding: 15px 10px;
-  
-  margin: 30px auto;
-  
 }
 .BU2 h2{
     font-size: 1.6em;
