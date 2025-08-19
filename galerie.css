@@ -65,7 +65,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 20px; 
+  margin-left: 10px; 
 }
 /* Liens de navigation */
 .nav-links {
@@ -496,9 +496,12 @@ header {
        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
   .BU2 p{
-    font-size: 1em;
+    font-size: 0.8em;
     color: #d9dcd6;
   }
+   .BU2 h2{
+    font-size: 1.5em;
+   }
 }
 
 @media (max-width:390px ) {

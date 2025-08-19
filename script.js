@@ -33,50 +33,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.next-btn');
 
     let currentImageIndex = 0;
-    const images = Array.from(galleryItems).map(img => img.src); // Récupère les chemins de toutes les images
+    // Ligne corrigée : Récupère l'URL de l'image depuis data-src si elle existe, sinon depuis src
+    const images = Array.from(galleryItems).map(img => img.dataset.src || img.src);
 
-    // Ouvre la lightbox
     function openLightbox(index) {
         currentImageIndex = index;
         lightboxImg.src = images[currentImageIndex];
-        lightbox.style.display = 'flex'; // Affiche la lightbox
+        lightbox.style.display = 'flex';
+        
+        // Pré-charge les images précédentes et suivantes pour une navigation fluide
+        const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+        const nextIndex = (currentImageIndex + 1) % images.length;
+        new Image().src = images[prevIndex];
+        new Image().src = images[nextIndex];
+
+        // Gère les erreurs de chargement d'image
+        lightboxImg.onerror = () => {
+            closeLightbox();
+            alert("L'image n'a pas pu être chargée. Veuillez réessayer.");
+        };
     }
 
-    // Ferme la lightbox
     function closeLightbox() {
         lightbox.style.display = 'none';
     }
 
-    // Affiche l'image précédente
     function showPrevImage() {
         currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
         lightboxImg.src = images[currentImageIndex];
     }
 
-    // Affiche l'image suivante
     function showNextImage() {
         currentImageIndex = (currentImageIndex + 1) % images.length;
         lightboxImg.src = images[currentImageIndex];
     }
 
-    // Écouteurs d'événements pour les vignettes de la galerie
     galleryItems.forEach((item, index) => {
         item.addEventListener('click', () => openLightbox(index));
     });
 
-    // Écouteurs d'événements pour les boutons de la lightbox
     closeBtn.addEventListener('click', closeLightbox);
     prevBtn.addEventListener('click', showPrevImage);
     nextBtn.addEventListener('click', showNextImage);
 
-    // Ferme la lightbox en cliquant en dehors de l'image
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) {
             closeLightbox();
         }
     });
 
-    // Optionnel : Navigation au clavier (flèches gauche/droite, Échap)
     document.addEventListener('keydown', (e) => {
         if (lightbox.style.display === 'flex') {
             if (e.key === 'ArrowLeft') {
@@ -88,11 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
-    // Note: Le bouton "CHARGER PLUS" n'a pas de fonctionnalité JS ici.
-    // Si vous voulez implémenter le chargement de plus d'images, vous devrez
-    // ajouter une logique pour ajouter de nouveaux '.gallery-item' au DOM
-    // et leur attacher des écouteurs d'événements.
 });
 
 

@@ -68,7 +68,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 20px; 
+  margin-left: 10px; 
 }
 /* Liens de navigation */
 .nav-links {

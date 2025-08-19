@@ -65,7 +65,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 20px; 
+  margin-left: 10px; 
 }
 /* Liens de navigation */
 .nav-links {
@@ -193,8 +193,8 @@ header {
     padding-right: 20px; /* Ajoute un petit espace à droite du texte si nécessaire */
 }
 
-.buhanor-content h1 {
-    font-family: 'VotrePoliceDuTitre', sans-serif; /* Remplacez par la police utilisée dans Canva */
+.buhanor-content h2 {
+    font-family: '', sans-serif; /* Remplacez par la police utilisée dans Canva */
     font-size: 3em; /* Ajustez la taille de la police pour correspondre à votre design */
     color: #adb5bd; /* Couleur du texte du titre */
     margin-bottom: 10px; /* Espace sous le titre */
@@ -678,6 +678,12 @@ header {
 
     .hamburger-menu {
         display: block; /* Affiche le menu hamburger sur les petits écrans */
+    }
+    .hero h1{
+        font-size: 1.5em;
+    }
+    .buhanor-content h2{
+        font-size: 2.5em;
     }
 }
 

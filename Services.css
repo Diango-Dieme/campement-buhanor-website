@@ -70,7 +70,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 
 /* Liens de navigation */
@@ -787,7 +787,7 @@ h1, h2 {
      }
 
      .hero p {
-       font-size: 1em;
+       font-size: 0.8em;
        font-weight: 300;
      }
 
@@ -832,9 +832,13 @@ h1, h2 {
 
      .lorem-text {
       color: white;
-      margin-bottom: 15px;
-      font-size: 1em;
+      margin-bottom: 10px;
+      padding: 0 20px;
+      font-size: 0.8em;
       text-align: left;
+    }
+    .reach-out-button{
+        font-size: 0.7em;
     }
 
     .E-CCH{
@@ -848,9 +852,12 @@ h1, h2 {
 
      .E-CCH h2{
      padding-bottom: 30px ;
-     font-size: 3rem;
+     font-size: 2rem;
      }
 
+     .reach-out-button{
+         font-size: 0.7em;
+     }
 
      .button{
      background-color: NONE; /* Green */
@@ -895,7 +902,7 @@ h1, h2 {
      
      .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 15px;
     max-width: 1200px;
     margin: 9px auto;
@@ -904,6 +911,10 @@ h1, h2 {
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
+    .BU2 {
+        padding: 30px 0px;
+    }
+
      
  }    
  @media (max-width:390px ) {
@@ -911,4 +922,8 @@ h1, h2 {
    .nav-links{
     font-size: 1em;
    }
+    }
+    }
+    }
+    }
 }

@@ -65,7 +65,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-   margin-left: 20px;
+   margin-left: 10px;
 }
 /* Liens de navigation */
 .nav-links {
@@ -510,16 +510,18 @@ header {
     }
      
      .hero h1 {
-      font-size: 1.7rem;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-      text-align: center;
+       font-size: 1.3rem;
+       letter-spacing: 2px;
+       margin-bottom: 15px;
+       text-align: center;
+     }
+     .hero p{
+        font-size: 1em;
      }
       .chambre-wrapper {
     margin: 55px 2px;
-    
     padding: 30 2px;
-}
+     }
 
 
 .chambress h2  {
@@ -530,7 +532,7 @@ header {
 }
 
 .chambress p {
-  font-size: 1.4rem;
+  font-size: 1rem;
     font-weight: 300;
   color: #ffafcc;
   text-align: left;
@@ -559,7 +561,7 @@ header {
 }
 
 .chambres p {
-  font-size: 1.4rem;
+  font-size: 1rem;
     font-weight: 300;
   color: white;
   text-align: left;

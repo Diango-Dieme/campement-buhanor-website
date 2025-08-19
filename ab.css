@@ -68,7 +68,7 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 
@@ -465,9 +465,13 @@ header {
         flex: 1 1 100%; /* 1 colonne sur les petits écrans/mobiles */
         max-width: none; /* Pas de largeur maximale sur mobile */
     }
+    .review-card P{
+        font-size: 1em;
+        line-height: 1.3;
+    }
     
     .reviews {
-        padding: 30px 15px; /* Ajustement du padding pour les petits écrans */
+        padding: 41px 45px; /* Ajustement du padding pour les petits écrans */
     }
     
     .reviews h2 {

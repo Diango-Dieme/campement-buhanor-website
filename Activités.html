@@ -121,6 +121,24 @@
                        <img src="cabane-nature-paysage-ile-d'egueye-casamance.jpg" alt="Aventure en Casamance : découverte de la nature luxuriante lors d'une excursion près du Campement Buhanor, exploration de la forêt à l'ile d'egueye .">
                     </div>
                     <div class="gallery-item">
+                       <img src="touristes-argentin-campement-buhanor-plage-cap-skirring.jpg" alt="randonnées des touristes venus d'argentine pour visiter et decouvrire la plage de cap skirring et de son paysages   .">
+                    </div>
+                    <div class="gallery-item">
+                       <img src="case-impluvium-diola-enampor-traditonnel.jpg" alt="interieure d'une case a impulvium diola en Casamance a enampor.">
+                    </div>
+                    <div class="gallery-item">
+                       <img src="decouverte-tourisme-activitee-village-diola-enampor-buhanor.jpg" alt="groupe de touriste international venu d'argentine pour decouvrire les maisons et case à impluvium diola a enampor en Casamance .">
+                    </div>
+                    <div class="gallery-item">
+                       <img src="art-sculture-diola-poteri-campement-buhanor-cap-skirring.jpg" alt=" touriste argentin decouvrant l'art culturels diola au campement buhanor à Cap Skirring .">
+                    </div>
+                    <div class="gallery-item">
+                       <img src="diner-restaurant-groupe-tourisme-argentin-campement-buhanor-cap-skirring.jpg" alt=" groupe de touriste argentin qui prennent leur diner au campement buhanor à Cap Skirring .">
+                    </div>
+                    <div class="gallery-item">
+                       <img src="apprentissage-instrument-musique-kora-campement-buhanor-cap-skirring.jpg" alt="un groupe de touriste international argentin apprenant la kora au campement buhanor a Cap Skirring .">
+                    </div>
+                    <div class="gallery-item">
                        <img src="cayak-mangrove-ile-d'egueye.jpg" alt="Excursion en kayak dans les bolongs de Casamance, découvrez la mangrove et les paysages aquatiques depuis le Campement Buhanor.">
                     </div>
                     <div class="gallery-item">
@@ -143,6 +161,12 @@
                     </div>
                     <div class="gallery-item">
                        <img src="plage-buhanor-vue-generale-chemin.jpg" alt="Vue panoramique de la magnifique plage de Cap Skirring, montrant le chemin d'accès depuis le Campement Buhanor à travers la végétation luxuriante jusqu'au sable fin et l'océan Atlantique">
+                    </div>
+                    <div class="gallery-item">
+                       <img src="mangrove-pirogue-tradionnelle-diola-casamance.jpg" alt="pirogue traditionnelle diola dans les magnifiques mangroves de la Casamance">
+                    </div>
+                    <div class="gallery-item">
+                       <img src="ile-d'egueye-excursion-vacance.jpg" alt="Vue panoramique de la magnifique plage de l'ile d'egueye">
                     </div>
                    
                </div>
@@ -196,50 +220,51 @@
     <script src="script.js"></script> 
 </body>
 <script >
-           document.addEventListener("DOMContentLoaded", function() {
-  // Sélectionne toutes les images qui ont un src (et pas de data-src)
-  const images = document.querySelectorAll("img[src]:not([data-src])");
+         document.addEventListener("DOMContentLoaded", function() {
+  // Sélectionne toutes les images qui ont un attribut 'data-src'
+  // C'est la bonne pratique pour le lazy loading
+  const images = document.querySelectorAll("img[data-src]");
   
   if (!images.length) return;
 
   const lazyLoad = function() {
     if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(function(entries) {
+      const observer = new IntersectionObserver(function(entries, observer) { // L'observer est passé en 2e argument
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             const img = entry.target;
             
-            // Charge l'image en restaurant le src depuis data-src
+            // On charge l'image en copiant la valeur de data-src vers src
             img.src = img.dataset.src;
             if (img.dataset.srcset) {
                 img.srcset = img.dataset.srcset;
             }
             
             img.classList.add('loaded');
-            observer.unobserve(img);
+            observer.unobserve(img); // On arrête d'observer une fois l'image chargée
           }
         });
       }, { rootMargin: "200px 0px" });
 
       images.forEach(function(img) {
-        // Déplace l'URL de l'image de 'src' vers 'data-src'
-        img.dataset.src = img.src;
-        img.src = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="; // Placeholder vide
-        
-        // On observe l'image
+        // Le code ici est inutile si les images sont déjà configurées avec data-src
+        // On les observe directement
         observer.observe(img);
       });
     } else {
-      // Fallback pour anciens navigateurs (à adapter pour le data-src)
+      // Fallback pour anciens navigateurs
       const lazyLoadFallback = function() {
         images.forEach(function(img) {
           if (img.getBoundingClientRect().top <= window.innerHeight + 200) {
+            // S'assure que l'image n'a pas déjà été chargée
             if (img.dataset.src) {
                 img.src = img.dataset.src;
                 if (img.dataset.srcset) {
                     img.srcset = img.dataset.srcset;
                 }
                 img.classList.add('loaded');
+                // On retire l'attribut data-src pour ne pas la recharger
+                img.removeAttribute('data-src');
             }
           }
         });
