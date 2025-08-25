@@ -246,48 +246,50 @@
         </div>        
     </div>
      </section>
-    <section id="promotions">
-  <h2>Nos Offres et Promotions Exclusives</h2>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <!-- Slide 1 -->
-      <div class="swiper-slide">
-        <div class="promo-badge">-20%</div>
-        <img src="maison-traditionnel-diola-campement-buhanor.jpg" alt="Réduction semaine">
-        <div class="slide-content">
-          <h3>Réduction pour une Semaine</h3>
-          <p>Réservez 7 nuits et obtenez 20% de réduction ! Profitez des plages de Cap Skirring.</p>
-          <a href="/reservation-contact" class="btn">Réservez maintenant</a>
+     <section id="promotions">
+        <div class="promo-container">
+            <h2>Nos Offres et Promotions Exclusives</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="promo-badge">-20%</div>
+                        <img src="maison-traditionnel-diola-campement-buhanor.jpg" alt="Réduction semaine">
+                        <div class="slide-content">
+                            <h3>Réduction pour une Semaine</h3>
+                            <p>Réservez 7 nuits et obtenez 20% de réduction ! Profitez des plages de Cap Skirring.</p>
+                            <a href="/reservation-contact" class="btn">Réservez maintenant</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="promo-badge">Inclus</div>
+                        <img src="case-impluvium-diola-enampor-traditonnel.jpg" alt="Excursion Casamance">
+                        <div class="slide-content">
+                            <h3>Excursions en Casamance</h3>
+                            <p>Découvrez les bolongs et l'île de Carabane avec une excursion guidée incluse .</p>
+                            <a href="/reservation-contact" class="btn">Réservez maintenant</a>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="promo-badge">Dès 5000 FCFA</div>
+                        <img src="vue-plage-bar-jus-locale-campement-buhanor-cap-skirring.jpg" alt="Sortie groupe">
+                        <div class="slide-content">
+                            <h3>Sorties en Groupe une Journée</h3>
+                            <p>Journée au campement : activités Diola, repas et plage – dès 5000 FCFA/pers.</p>
+                            <a href="/reservation-contact" class="btn">Réservez maintenant</a>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Ajoute des flèches de navigation
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> -->
+                <!-- Pagination (points en bas) -->
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-      </div>
-      <!-- Slide 2 -->
-      <div class="swiper-slide">
-        <div class="promo-badge">Inclus</div>
-        <img src="case-impluvium-diola-enampor-traditonnel.jpg" alt="Excursion Casamance">
-        <div class="slide-content">
-          <h3>Excursions en Casamance</h3>
-          <p>Découvrez les bolongs et l'île de Carabane avec une excursion guidée incluse pour 3 nuits min.</p>
-          <a href="/reservation-contact" class="btn">Réservez maintenant</a>
-        </div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="swiper-slide">
-        <div class="promo-badge">Dès 5000 FCFA</div>
-        <img src="vue-plage-bar-jus-locale-campement-buhanor-cap-skirring.jpg" alt="Sortie groupe">
-        <div class="slide-content">
-          <h3>Sorties en Groupe une Journée</h3>
-          <p>Journée au campement : activités Diola, repas et plage – dès 5000 FCFA/pers.</p>
-          <a href="/reservation-contact" class="btn">Réservez maintenant</a>
-        </div>
-      </div>
-    </div>
-    <!-- Ajoute des flèches de navigation -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <!-- Pagination (points en bas) -->
-    <div class="swiper-pagination"></div>
-  </div>
-</section>
+    </section>
      <section class="Contact">
       <div class="CON">
         <h2> Réservez votre séjour dès maintenant ! </h2>
@@ -389,40 +391,40 @@
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script >
    document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 25,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 40,
-        },
-      }
-    });
-  });
+            const swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 15,
+                    },
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 25,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    },
+                }
+            });
+        });
           document.addEventListener("DOMContentLoaded", function() {
   // Sélectionne toutes les images qui ont un attribut 'data-src'
   // C'est la bonne pratique pour le lazy loading
