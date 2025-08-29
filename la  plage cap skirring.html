@@ -69,7 +69,7 @@
                 <div class="image-text-block">
                    <div class="gallery-item"> <img src="campement-buhanor-cap-skirring.Jpg" alt="Façade éclairée du Campement Buhanor au crépuscule ou de nuit, avec des palmiers en silhouette, offrant une ambiance chaleureuse et tropicale à Cap-Skirring"> </div>
                     <div class="text-content">
-                        <p> Le Campement Buhanor vous offre un accès privilégié à ce havre de paix. Nos bungalows sont idéalement situés pour admirer des levers et couchers de soleil spectaculaires, transformant le ciel en une palette de couleurs flamboyantes. La plage de Cap Skirring est parfaite pour des promenades romantiques, des baignades rafraîchissantes ou simplement pour se détendre au son des vagues.</p>
+                        <p> Le Campement Buhanor vous offre un accès privilégié à ce havre de paix. Nos chambres sont idéalement situés pour admirer des levers et couchers de soleil spectaculaires, transformant le ciel en une palette de couleurs flamboyantes. La plage de Cap Skirring est parfaite pour des promenades romantiques, des baignades rafraîchissantes ou simplement pour se détendre au son des vagues.</p>
                     </div>
                 </div>
                
@@ -147,66 +147,6 @@
     </div>
      <script src="script.js"></script> 
 </body>
-<script >
-           document.addEventListener("DOMContentLoaded", function() {
-  // Sélectionne toutes les images qui ont un src (et pas de data-src)
-  const images = document.querySelectorAll("img[src]:not([data-src])");
-  
-  if (!images.length) return;
-
-  const lazyLoad = function() {
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            
-            // Charge l'image en restaurant le src depuis data-src
-            img.src = img.dataset.src;
-            if (img.dataset.srcset) {
-                img.srcset = img.dataset.srcset;
-            }
-            
-            img.classList.add('loaded');
-            observer.unobserve(img);
-          }
-        });
-      }, { rootMargin: "200px 0px" });
-
-      images.forEach(function(img) {
-        // Déplace l'URL de l'image de 'src' vers 'data-src'
-        img.dataset.src = img.src;
-        img.src = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="; // Placeholder vide
-        
-        // On observe l'image
-        observer.observe(img);
-      });
-    } else {
-      // Fallback pour anciens navigateurs (à adapter pour le data-src)
-      const lazyLoadFallback = function() {
-        images.forEach(function(img) {
-          if (img.getBoundingClientRect().top <= window.innerHeight + 200) {
-            if (img.dataset.src) {
-                img.src = img.dataset.src;
-                if (img.dataset.srcset) {
-                    img.srcset = img.dataset.srcset;
-                }
-                img.classList.add('loaded');
-            }
-          }
-        });
-      };
-      
-      window.addEventListener('scroll', lazyLoadFallback);
-      window.addEventListener('resize', lazyLoadFallback);
-      window.addEventListener('orientationchange', lazyLoadFallback);
-      lazyLoadFallback();
-    }
-  };
-
-  lazyLoad();
-});
-      </script>
 </html>
 
 

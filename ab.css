@@ -419,12 +419,12 @@ header {
         .swiper-pagination-bullet {
             width: 10px;
             height: 10px;
-            background: var(--couleur-accent-marron);
+            background: var(--couleur-primaire-foncee);
             opacity: 1;
         }
         
         .swiper-pagination-bullet-active {
-            background: var(--couleur-accent-marron);
+            background: var(--couleur-primaire-foncee);
         }
         
         @media (max-width: 768px) {

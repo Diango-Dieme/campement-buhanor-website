@@ -1,6 +1,6 @@
 
         
- Styles généraux */
+ /*Styles généraux */
 /* Variables CSS pour les couleurs */
 :root {
   --couleur-primaire-foncee: #45261d;
@@ -132,8 +132,7 @@ header {
 
 /* ===== Section Hero ===== */
 .hero {
-    /* Remplacez 'city-background.jpg' par le chemin de votre image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('belle-plage-cap-skirring-rose.jpg');
+       background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('belle-plage-cap-skirring-rose.jpg');
     height: 400px;
     background-position: center;
     background-size: cover;
