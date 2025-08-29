@@ -484,15 +484,14 @@ li:before {
 }
 
 .footersectionblog p {
-    text-align: justify;
-    padding: 0 15%;
-    color: #660708;
+    text-align: center;
+    color: white;
     margin: 0;
 } 
 .footersectionblog a{
      font-family: "Montserrat";
       font-size: 1.1em;
-     color: var(--couleur-accent-marron);
+     color: #CE7650;
 }
 
 .footer-section a {
