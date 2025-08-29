@@ -82,13 +82,13 @@ header {
     margin: 0 20px;
     padding: 0;
     display: flex;
-    font-size: 1.3em;
+    font-size: 1.2em;
     gap: 15px;
     transition: transform 0.3s ease-in-out;
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-bottom: 0;
 }
 
 .nav-links a {
@@ -467,15 +467,16 @@ li:before {
 }
 
 .footer-section p {
-       font-family: "Montserrat";
+     font-family: "Montserrat";
       font-size: 1.1em;
-     color: #555;
+      color: #555;
 }
+
 .footersectionblog{
     margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
     text-align: justify; /* Alignement du texte à gauche par défaut */
-
 }
+
 .footersectionblog h3 {
     text-align: center;
     margin-bottom: 10px;
@@ -484,7 +485,7 @@ li:before {
 
 .footersectionblog p {
     text-align: justify;
-    padding: 0 5%;
+    padding: 0 15%;
     color: #660708;
     margin: 0;
 } 

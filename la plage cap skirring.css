@@ -76,16 +76,15 @@ header {
     margin: 5px 59px;
     padding: 0;
     display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
-    font-size: 1.3em;
+    font-size: 1.2em;
     gap: 15px;
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-bottom: 0;
 }
-
 .nav-links a {
-     font-family: "Revalia";
+     font-family: "Revalia", sans-serif;
     color: white;
     text-decoration: none;
     padding: 5px 0;
@@ -96,6 +95,18 @@ header {
     color:  #f20089;
 }
 
+li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+li:before {
+    content: "•";
+    color: #f20089;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
 /* Menu Hamburger */
 .hamburger-menu {
     display: none; /* Masqué par défaut sur les grands écrans */
@@ -653,87 +664,63 @@ header {
 
     .nav-links{
         margin: 5px 40px;
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
-
+  }
+/* Media Queries pour le menu hamburger */
 @media (max-width: 999px) {
-
     .nav-links {
-        display: none; /* Masque les liens par défaut sur les petits écrans */
+        display: none;
         flex-direction: column;
-        width: 25%;
-        background-color:   #A96668; /* Couleur de fond pour le menu ouvert */
+        width: 100%;
+        background-color:  #A96668;
         position: absolute;
-        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
+        top: 70px; /* Ajustez selon la hauteur réelle de .navbar */
         right: 0;
         text-align: center;
-        padding: 14px 0px;
+        padding: 20px 0;
         font-size: 1.4em;
-        margin: 10px 1px;
         z-index: 999;
-    }
-
-    .navbar img{
-         max-width: 150px; /* Taille du logo dans la nav */
-        height: auto;
-  
+        transform: translateX(100%);
     }
 
     .nav-links.active {
-        display: flex; /* Affiche les liens quand le menu est actif */
-        padding: 0 13px;
+        display: flex;
+        transform: translateX(0);
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 15px 0;
     }
 
     .hamburger-menu {
-        display: block; /* Affiche le menu hamburger sur les petits écrans */
+        display: block;
     }
 
+    .brand-logo img {
+        width: 120px;
+    }
 }
-
 
 @media (max-width: 799px) {
     .nav-links {
-        display: none; /* Masque les liens par défaut sur les petits écrans */
-        flex-direction: column;
-        width: 25%;
-        background-color:   #A96668;; /* Couleur de fond pour le menu ouvert */
-        position: absolute;
-        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
-        right: 0;
-        text-align: center;
-        padding: 14px 0px;
+        width: 35%;
+        margin: 0;
+        top: 70px;
         font-size: 1.2em;
-        margin: 10px 1px;
-        z-index: 999;
-    }
-
-    .navbar img{
-         max-width: 150px; /* Taille du logo dans la nav */
-        height: auto;
-  
     }
 
     .nav-links.active {
-        display: flex; /* Affiche les liens quand le menu est actif */
+        display: flex;
+        padding: 20px 0;
+        MARGIN-TOP: -5%;
+    }
+    li {
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 
-    .nav-links li {
-        margin: 10px 0;
+    .brand-logo img {
+        width: 100px;
     }
-
-    .hamburger-menu {
-        display: block; /* Affiche le menu hamburger sur les petits écrans */
-    }
-
-}
-
-@media (max-width:390px ) {
-   
-   .nav-links{
-    font-size: 1em;
-   }
 }

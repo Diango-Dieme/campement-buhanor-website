@@ -49,14 +49,13 @@ mark{
 
 
 header {
-    background-color: #45261d;
+    background-color: #000814;
     color: white;
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-
 
 
 .navbar {
@@ -73,26 +72,23 @@ header {
 .navbar img{
   width: 100px; /* Taille du logo dans la nav */
   height: auto;
-  margin-left: 10px;
+  margin-left: 10px; 
 }
-
-
 /* Liens de navigation */
 .nav-links {
     list-style: none;
-    margin: 5px 50px;
+    margin: 5px 59px;
     padding: 0;
     display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
-    font-size: 1.3em;
+    font-size: 1.2em;
     gap: 15px;
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin-bottom: 0;
 }
-
 .nav-links a {
-     font-family: "Revalia";
+     font-family: "Revalia", sans-serif;
     color: white;
     text-decoration: none;
     padding: 5px 0;
@@ -100,18 +96,29 @@ header {
 }
 
 .nav-links a:hover {
-    color:  #CE7650;
+    color:  #f20089;
 }
 
+li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+li:before {
+    content: "•";
+    color: #f20089;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
 /* Menu Hamburger */
 .hamburger-menu {
-    display: none; /* Masqué par défaut sur les grands écrans */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    position: relative; /* Pour positionner les barres */
-    z-index: 1000; /* Assurez-vous qu'il est au-dessus des autres éléments */
+    z-index: 1001;
 }
 
 .hamburger-menu .bar {
@@ -123,7 +130,6 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-/* Styles pour le menu ouvert (JavaScript ajoute la classe .open) */
 .hamburger-menu.open .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -134,7 +140,7 @@ header {
 
 .hamburger-menu.open .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
-} 
+}
 
 /* ===== Réglages Généraux et Polices ===== */
 
@@ -191,7 +197,6 @@ h1, h2 {
 
 .main-container {
     display: flex;
-  
     background-color: #000814;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
@@ -406,15 +411,14 @@ button[type="submit"]:hover {
 }
 
 .footersectionblog p {
-    text-align: none;
-    color: #660708;
+    text-align: center;
+    color: white;
     margin: 0;
 } 
 .footersectionblog a{
-    text-decoration: none;
      font-family: "Montserrat";
       font-size: 1.1em;
-     color: #555;
+     color: #000814;
 }
 
 .footer-section a {
@@ -488,89 +492,14 @@ button[type="submit"]:hover {
 
 }
 
-
 @media (max-width: 999px) {
-
-    .nav-links {
-        display: none; /* Masque les liens par défaut sur les petits écrans */
-        flex-direction: column;
-        width: 25%;
-        background-color:  #000814;; /* Couleur de fond pour le menu ouvert */
-        position: absolute;
-        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
-        right: 0;
-        text-align: center;
-        padding: 14px 0px;
-        font-size: 1.4em;
-        margin: 0px 0px;
-        z-index: 999;
-    }
-
-    .navbar img{
-         max-width: 150px; /* Taille du logo dans la nav */
-        height: auto;
-  
-    }
-
-    .nav-links.active {
-        display: flex; /* Affiche les liens quand le menu est actif */
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .hamburger-menu {
-        display: block; /* Affiche le menu hamburger sur les petits écrans */
-    }
-    
     .contact-info {
         padding: 22px 5px;
     }
-
-
-
 }
 
 
 @media (max-width: 799px) {
-    .nav-links {
-        display: none; /* Masque les liens par défaut sur les petits écrans */
-        flex-direction: column;
-        width: 25%;
-        background-color:  #000814;; /* Couleur de fond pour le menu ouvert */
-        position: absolute;
-        top: 50px; /* Ajuster en fonction de la hauteur de votre header */
-        right: 0;
-        text-align: center;
-        padding: 14px 0px;
-        font-size: 1.2em;
-        margin:0px 0px;
-        z-index: 999;
-    }
-
-    .navbar img{
-         max-width: 150px; /* Taille du logo dans la nav */
-        height: auto;
-  
-    }
-
-    .nav-links.active {
-        display: flex; /* Affiche les liens quand le menu est actif */
-        padding: 0 13px;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .hamburger-menu {
-        display: block; /* Affiche le menu hamburger sur les petits écrans */
-    }
-
-
-
-
 .hero h1 {
     font-size: 1.3em;
     letter-spacing: 2px;
@@ -641,12 +570,7 @@ button[type="submit"]:hover {
 /* ===== Section Carte ===== */
 .map-section {
     width: 100%;
-  
-}
-
-
-
-
+  }
 /* ===== Pied de page (Footer) ===== */
 footer {
     background-color: black; /* Bleu foncé */
@@ -672,14 +596,65 @@ footer h2{
 .maps{
     width: 10%;
 }
-
-   
 } 
+/* Media Queries pour le menu hamburger */
+@media (max-width: 999px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color:#000814;
+        position: absolute;
+        top: 70px; /* Ajustez selon la hauteur réelle de .navbar */
+        right: 0;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 1.4em;
+        z-index: 999;
+        transform: translateX(100%);
+    }
 
-@media (max-width:390px ) {
-   
-   .nav-links{
-    font-size: 1em;
-   }
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .brand-logo img {
+        width: 120px;
+    }
 }
+
+@media (max-width: 799px) {
+    .nav-links {
+        width: 35%;
+        margin: 0;
+        top: 70px;
+        font-size: 1.2em;
+    }
+
+    .nav-links.active {
+        display: flex;
+        padding: 20px 0;
+        MARGIN-TOP: -5%;
+    }
+    li {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .brand-logo img {
+        width: 100px;
+    }
+}
+
+
+
 
