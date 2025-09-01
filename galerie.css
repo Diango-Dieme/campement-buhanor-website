@@ -139,7 +139,7 @@ li:before {
 /* ===== Section Hero ===== */
 .hero {
     /* Remplacez 'city-background.jpg' par le chemin de votre image */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url('batiment-traditionnel-art-diola-campement-buhanor.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('maison-traditionnel-diola-campement-buhanor.jpg');
     height: 400px;
     background-position: center;
     background-size: cover;
