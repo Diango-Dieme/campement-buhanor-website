@@ -29,6 +29,26 @@ body {
     color: var(--couleur-texte-sombre);
     background-color: var(--couleur-fond);
 }
+ /* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation sur le défilement */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px) perspective(1000px) rotateX(5deg) scale(0.95);
+    filter: blur(4px);
+    transition-property: opacity, transform, filter;
+    transition-duration: 0.9s;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0) perspective(1000px) rotateX(0) scale(1);
+    filter: blur(0);
+}
 
 .container {
     max-width: 1200px;

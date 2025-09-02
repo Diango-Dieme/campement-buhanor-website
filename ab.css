@@ -28,7 +28,7 @@ body, h1, h2, h3, p, ul, li {
   font-weight: 400; /* Exemple, ajustez selon votre lien Google Fonts */
   font-style: normal;
 }
-/*site Buhanor*/
+
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
@@ -51,6 +51,26 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation sur le défilement */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px) perspective(1000px) rotateX(5deg) scale(0.95);
+    filter: blur(4px);
+    transition-property: opacity, transform, filter;
+    transition-duration: 0.9s;
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0) perspective(1000px) rotateX(0) scale(1);
+    filter: blur(0);
 }
 
 .navbar {
