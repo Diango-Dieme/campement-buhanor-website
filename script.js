@@ -257,31 +257,31 @@ document.addEventListener('DOMContentLoaded', function() {
         if (messageInput) messageInput.addEventListener('input', () => hideError(messageError));
     }
 
-    // ===== CARROUSEL SWIPER =====
-    const swiperContainer = document.querySelector('.swiper-container');
-    if (swiperContainer && typeof Swiper !== 'undefined') {
-        new Swiper(swiperContainer, {
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                320: { slidesPerView: 1, spaceBetween: 15 },
-                640: { slidesPerView: 1, spaceBetween: 20 },
-                768: { slidesPerView: 2, spaceBetween: 25 },
-                1024: { slidesPerView: 3, spaceBetween: 30 },
-            }
-        });
-    }
+   // ===== CARROUSEL SWIPER =====
+const swiperContainer = document.querySelector('.swiper-container');
+if (swiperContainer && typeof Swiper !== 'undefined') {
+    new Swiper(swiperContainer, {
+        // Enlevez le paramètre loop: true, ou le mettre à false
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            320: { slidesPerView: 1, spaceBetween: 15 },
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 25 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
+        }
+    });
+}
 
     // ===== LAZY LOADING DES IMAGES =====
     const imagesToLazyLoad = document.querySelectorAll('img[data-src]');
