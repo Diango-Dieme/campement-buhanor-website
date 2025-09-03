@@ -620,17 +620,6 @@ h1, h2 {
         margin-bottom: 10px; /* Marge sous le logo quand empilé */
     }
 }
-/* Styles pour les icônes des plateformes */
-.platform-icons {
-    display: flex;
-    align-items: center;
-}
-
-.platform-icons img {
-    height: 44px; /* Taille des icônes */
-    margin-right: 40px; /* Espace entre les icônes */
-
-}
 
 
 
