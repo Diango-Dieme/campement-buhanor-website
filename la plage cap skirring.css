@@ -51,20 +51,17 @@ html {
 
 /* Animation sur le défilement */
 .fade-in {
-    opacity: 0;
-    transform: translateY(50px) perspective(1000px) rotateX(5deg) scale(0.95);
-    filter: blur(4px);
-    transition-property: opacity, transform, filter;
-    transition-duration: 0.9s;
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  opacity: 0;
+  transform: translateY(20px);
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
 }
 
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0) perspective(1000px) rotateX(0) scale(1);
-    filter: blur(0);
+  opacity: 1;
+  transform: translateY(0);
 }
-
 header {
     background-color: #45261d;
     color: white;

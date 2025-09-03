@@ -301,7 +301,6 @@ li:before {
 .footer {
     background-color: black; /* Couleur de fond verte foncée */
     color: white;
-    padding: 40px 10px;
     font-family: "Revalia"; 
 }
 
@@ -364,12 +363,10 @@ li:before {
 }
 
 .platform-icons img {
-    height: 44px; /* Taille des icônes */
-    margin-right: 40px; /* Espace entre les icônes */
+    height: 40px; /* Taille des icônes */
+    margin-right: 20px; /* Espace entre les icônes */
 
 }
-
-
 
 /* Section inférieure du footer (logo) */
 .footer-bottom {

@@ -35,9 +35,8 @@ body {
   background: #000814;
   color: #3B260E; /* Couleur de texte par défaut */
 }
-mark{
-    background-color: #aacc00;
-    color: black;
+span{
+    color: #25D366;
 }
 
 .montserrat-<uniquifier> {
@@ -244,7 +243,27 @@ h1, h2 {
     font-weight: 900;
     font-size: 2em;
 }
-
+  .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+        
+        .whatsapp-button i {
+            margin-right: 8px;
+        }
 /* Section du formulaire (à droite) */
 .form-section {
     flex: 1;
@@ -369,7 +388,6 @@ button[type="submit"]:hover {
 .footer {
     background-color: white; /* Couleur de fond verte foncée */
     color: #45261d;
-    padding: 40px 10px;
     font-family: "Revalia"; 
 }
 
@@ -432,12 +450,10 @@ button[type="submit"]:hover {
 }
 
 .platform-icons img {
-    height: 44px; /* Taille des icônes */
-    margin-right: 40px; /* Espace entre les icônes */
+    height: 40px; /* Taille des icônes */
+    margin-right: 20px; /* Espace entre les icônes */
 
 }
-
-
 
 /* Section inférieure du footer (logo) */
 .footer-bottom {
