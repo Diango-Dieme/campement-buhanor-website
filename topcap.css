@@ -1,0 +1,591 @@
+/* Variables CSS pour les couleurs */
+:root {
+    :root {
+            --primary-color: #2c5aa0;
+            --secondary-color: #d4a56a;
+            --accent-color: #e76f51;
+            --light-color: #f8f9fa;
+            --dark-color: #2b2d42;
+            --text-color: #4a4a4a;
+            --transition: all 0.3s ease;
+        }
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--couleur-texte-sombre);
+    background-color: var(--couleur-fond);
+}
+ /* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation sur le défilement */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-timing-function: ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0.8rem;
+}
+
+/* Typographie */
+.revalia-regular {
+    font-family: "Revalia", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Header */
+header {
+    background-color: var(--couleur-primaire-foncee);
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    background-color: #45261d;
+}
+
+.brand-logo img {
+    width: 100px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* Liens de navigation */
+.nav-links {
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+    display: flex;
+    font-size: 1.2em;
+    gap: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-links li {
+    margin-bottom: 0;
+}
+
+.nav-links a {
+    font-family: "Revalia", sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--couleur-texte-clair);
+}
+li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+li:before {
+    content: "•";
+    color: #f20089;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Media Queries pour le menu hamburger */
+@media (max-width: 999px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--couleur-primaire-foncee);
+        position: absolute;
+        top: 70px; /* Ajustez selon la hauteur réelle de .navbar */
+        right: 0;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 1.4em;
+        z-index: 999;
+        transform: translateX(100%);
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .brand-logo img {
+        width: 120px;
+    }
+}
+
+@media (max-width: 799px) {
+    .nav-links {
+        width: 35%;
+        margin: 0;
+        top: 70px;
+        font-size: 1.2em;
+    }
+
+    .nav-links.active {
+        display: flex;
+        padding: 20px 0;
+        MARGIN-TOP: -6%;
+    }
+
+    .brand-logo img {
+        width: 100px;
+    }
+     li {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+picture {
+  display: block;
+  width: 100%;
+}
+
+picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+ .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header avec image de fond */
+        .article-header {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('plage-sunset-cap-skirring-.jpg') no-repeat center center/cover;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+        }
+
+        .article-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            max-width: 900px;
+        }
+
+        .article-header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        /* Introduction */
+        .intro-section {
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 5px solid #d4a56a;
+        }
+
+        .intro-section p {
+            font-size: 1.1em;
+            color: #4a4a4a;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .ocean-wave {
+            height: 4px;
+            background: linear-gradient(45deg, #2c5aa0, #d4a56a);
+            margin: 20px auto;
+            border-radius: 2px;
+            width: 100px;
+        }
+
+        /* Grille d'activités */
+        .activities-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            padding: 20px 0 60px;
+        }
+
+        .activity-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 900px) {
+            .activities-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .activity-image {
+            flex: 1;
+            min-height: 200px;
+            overflow: hidden;
+        }
+
+        .activity-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .activity-card:hover .activity-image img {
+            transform: scale(1.05);
+        }
+
+        .activity-content {
+            flex: 1;
+            padding: 25px;
+            position: relative;
+        }
+
+        .activity-number {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: #e76f51;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(231, 111, 81, 0.4);
+            z-index: 2;
+        }
+
+        .activity-title {
+            font-size: 1.4rem;
+            color: #2b2d42;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding-right: 40px;
+        }
+
+        .activity-description {
+            color: #4a4a4a;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .activity-tip {
+            background-color: rgba(212, 165, 106, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #d4a56a;
+            margin-top: 15px;
+        }
+
+        .activity-tip strong {
+            color: #e76f51;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .highlight {
+            background-color: rgba(212, 165, 106, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        /* Section contact */
+        .contact-section {
+            text-align: center;
+            background: #2c5aa0;
+            color: #ffffff;
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+        
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-item i {
+            color: #d4a56a;
+            font-size: 1.5em;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .activity-card {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .article-header {
+                height: 50vh;
+            }
+            
+            .article-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .article-header p {
+                font-size: 1.1rem;
+            }
+            
+            .intro-section {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+/* Footer */
+  /* Styles généraux du footer */
+.footer {
+    background-color: white; /* Couleur de fond verte foncée */
+    color: #45261d;
+    font-family: "Revalia"; 
+}
+.footerr { 
+            text-align: center; 
+            padding: 2rem; 
+            background-color: #020c1b; 
+            color: #8892b0; 
+        } 
+
+/* Section supérieure du footer (localisation, réservations, plateformes) */
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
+    margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
+}
+
+.footer-section {
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: center; /* Alignement du texte à gauche par défaut */
+}
+
+.footer-section h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 9px;
+    font-size: 1.5em;
+}
+
+.footer-section p {
+     font-family: "Montserrat";
+      font-size: 1.1em;
+      color: #555;
+}
+
+.footersectionblog{
+    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
+    text-align: justify; /* Alignement du texte à gauche par défaut */
+}
+
+.footersectionblog h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.footersectionblog p {
+    text-align: center;
+    color: white;
+    margin: 0;
+} 
+.footersectionblog a{
+     font-family: "Montserrat";
+      font-size: 1.1em;
+     color: #CE7650;
+}
+
+.footer-section a {
+    color: inherit;
+    text-decoration: none;
+}
+/* Styles pour les icônes des plateformes */
+.platform-icons {
+    display: flex;
+    align-items: center;
+}
+
+.platform-icons img {
+    height: 40px; /* Taille des icônes */
+    margin-right: 20px; /* Espace entre les icônes */
+
+}
+
+/* Section inférieure du footer (logo) */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
+}
+
+.footer-logo {
+    width: 300px;
+    height: auto; /* Hauteur du logo, ajustez selon vos besoins */
+    margin-right: 15px; /* Espace entre le logo et le texte "BUHANOR" */
+}
+
+
+/* Media queries pour la responsivité (facultatif mais recommandé) */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column; /* Empile les sections verticalement sur les petits écrans */
+        align-items: center; /* Centre les sections empilées */
+    }
+
+    .footer-section {
+        width: 100%; /* Chaque section prend toute la largeur */
+        text-align: center; /* Centre le texte des sections */
+    }
+
+    .platform-icons {
+        justify-content: center; /* Centre les icônes sur petits écrans */
+
+    }
+
+    .footer-logo {
+        margin-right: 0; /* Pas de marge à droite quand empilé */
+        margin-bottom: 10px; /* Marge sous le logo quand empilé */
+    }
+ }
