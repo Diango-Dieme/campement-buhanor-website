@@ -1,14 +1,10 @@
 /* Variables CSS pour les couleurs */
 :root {
-    :root {
-            --primary-color: #2c5aa0;
-            --secondary-color: #d4a56a;
-            --accent-color: #e76f51;
-            --light-color: #f8f9fa;
-            --dark-color: #2b2d42;
-            --text-color: #4a4a4a;
-            --transition: all 0.3s ease;
-        }
+  --couleur-primaire-foncee: #45261d;
+  --couleur-accent-marron: #8F543E;
+  --couleur-texte-clair: #CE7650;
+  --couleur-texte-sombre: #3B260E;
+  --couleur-neutre-grise: #AFA099;
 }
 
 /* Réinitialisation de base */
@@ -229,48 +225,52 @@ picture img {
   height: auto;
   display: block;
 }
- .container {
+ 
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         /* Header avec image de fond */
         .article-header {
-            height: 70vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('plage-sunset-cap-skirring-.jpg') no-repeat center center/cover;
+            height: 100vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('plage-sunset-cap-skirring-.jpg') no-repeat center center/cover;
             color: #ffffff;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 20px;
             position: relative;
             border-radius: 0 0 20px 20px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .article-header h1 {
-            font-size: 3rem;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             font-weight: 700;
             max-width: 900px;
+            line-height: 1.2;
         }
 
         .article-header p {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 3vw, 1.3rem);
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
+            line-height: 1.5;
         }
 
         /* Introduction */
         .intro-section {
-            padding: 40px;
+            padding: clamp(20px, 5vw, 40px);
             border-radius: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-align: center;
             background: #ffffff;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -278,7 +278,7 @@ picture img {
         }
 
         .intro-section p {
-            font-size: 1.1em;
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
             color: #4a4a4a;
             max-width: 700px;
             margin: 0 auto;
@@ -289,15 +289,15 @@ picture img {
             background: linear-gradient(45deg, #2c5aa0, #d4a56a);
             margin: 20px auto;
             border-radius: 2px;
-            width: 100px;
+            width: min(100px, 20vw);
         }
 
         /* Grille d'activités */
         .activities-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
-            padding: 20px 0 60px;
+            gap: clamp(20px, 4vw, 30px);
+            padding: 20px 0 40px;
         }
 
         .activity-card {
@@ -308,23 +308,18 @@ picture img {
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            min-height: 400px;
         }
 
-        @media (min-width: 900px) {
-            .activities-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
         .activity-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .activity-image {
-            flex: 1;
-            min-height: 200px;
+            height: 200px;
             overflow: hidden;
+            position: relative;
         }
 
         .activity-image img {
@@ -340,13 +335,15 @@ picture img {
 
         .activity-content {
             flex: 1;
-            padding: 25px;
+            padding: clamp(20px, 4vw, 25px);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .activity-number {
             position: absolute;
-            top: -20px;
+            top: -25px;
             right: 20px;
             width: 50px;
             height: 50px;
@@ -363,25 +360,29 @@ picture img {
         }
 
         .activity-title {
-            font-size: 1.4rem;
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
             color: #2b2d42;
             margin-bottom: 15px;
             font-weight: 600;
             padding-right: 40px;
+            line-height: 1.3;
         }
 
         .activity-description {
             color: #4a4a4a;
             margin-bottom: 15px;
             line-height: 1.7;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            flex-grow: 1;
         }
 
         .activity-tip {
             background-color: rgba(212, 165, 106, 0.1);
-            padding: 15px;
+            padding: clamp(12px, 3vw, 15px);
             border-radius: 8px;
             border-left: 4px solid #d4a56a;
-            margin-top: 15px;
+            margin-top: auto;
+            font-size: clamp(0.85rem, 2.3vw, 0.95rem);
         }
 
         .activity-tip strong {
@@ -396,82 +397,164 @@ picture img {
             border-radius: 4px;
             font-weight: 500;
         }
-        
-        /* Section contact */
-        .contact-section {
-            text-align: center;
-            background: #2c5aa0;
-            color: #ffffff;
-            padding: 60px 20px;
-            border-radius: 20px;
-            margin-top: 40px;
-        }
-        
-        .contact-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .contact-section p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1em;
-        }
-        
-        .contact-item i {
-            color: #d4a56a;
-            font-size: 1.5em;
-        }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .activity-card {
-                flex-direction: column;
-            }
-        }
+        /* Media queries pour un contrôle plus fin */
         
-        @media (max-width: 768px) {
+        /* Très petits écrans (320px-480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
             .article-header {
-                height: 50vh;
+                height: 70vh;
+                min-height: 400px;
+                margin-bottom: 20px;
+                border-radius: 0 0 15px 15px;
             }
-            
-            .article-header h1 {
-                font-size: 2.2rem;
-            }
-            
-            .article-header p {
-                font-size: 1.1rem;
-            }
-            
+
             .intro-section {
-                padding: 30px 20px;
+                padding: 20px 15px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+
+            .activities-container {
+                gap: 15px;
+                padding: 15px 0 30px;
+            }
+
+            .activity-card {
+                min-height: 350px;
+            }
+
+            .activity-image {
+                height: 150px;
+            }
+
+            .activity-content {
+                padding: 20px 15px;
+            }
+
+            .activity-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                right: 15px;
+                top: -20px;
+            }
+
+            .activity-title {
+                padding-right: 30px;
             }
         }
 
-        @media (max-width: 576px) {
+        /* Petits écrans (481px-768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .article-header {
+                height: 80vh;
+                min-height: 500px;
+            }
+
+            .activities-container {
+                gap: 20px;
+            }
+
+            .activity-image {
+                height: 180px;
+            }
+
+        }
+
+        /* Tablettes (769px-1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .activities-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .activity-card {
+                min-height: 450px;
+            }
+
+            .activity-image {
+                height: 220px;
+            }
+        }
+
+        /* Écrans moyens et grands (1025px+) */
+        @media (min-width: 1025px) {
+            .activities-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .activity-card {
+                min-height: 500px;
+            }
+
+            .activity-image {
+                height: 250px;
+            }
+        }
+
+        /* Très grands écrans (1440px+) */
+        @media (min-width: 1440px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
+
+        /* Optimisations pour les écrans tactiles */
+        @media (hover: none) and (pointer: coarse) {
+            .activity-card:hover {
+                transform: none;
+            }
+
+            .activity-card:active {
+                transform: scale(0.98);
+            }
+
+        }
+
+        /* Mode paysage sur mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .article-header {
+                height: 100vh;
+                min-height: 400px;
+            }
+
             .article-header h1 {
-                font-size: 1.8rem;
+                font-size: clamp(1.5rem, 4vw, 2.5rem);
             }
-            
-            .contact-info {
-                flex-direction: column;
+
+            .article-header p {
+                font-size: clamp(0.9rem, 2.5vw, 1.1rem);
             }
+        }
+
+        /* Accessibilité - Réduction des animations */
+        @media (prefers-reduced-motion: reduce) {
+            .activity-card {
+                transition: none;
+            }
+
+            .activity-image img {
+                transition: none;
+            }
+
+            .activity-card:hover {
+                transform: none;
+            }
+
+            .activity-card:hover .activity-image img {
+                transform: none;
+            }
+        }
+
+        /* Préservation des couleurs originales en mode sombre */
+        @media (prefers-color-scheme: dark) {
+            /* Maintien des couleurs d'origine pour préserver l'identité visuelle */
         }
 /* Footer */
   /* Styles généraux du footer */
