@@ -155,6 +155,31 @@ li:before {
 .hamburger-menu.open .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
+.video-container {
+    position: relative;
+    width: 100%;
+    /* Ajoutez d'autres propriétés de mise en page si nécessaire */
+}
+
+.video-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
+    z-index: 2; /* L'image est au-dessus de la vidéo */
+    transition: opacity 0.5s ease-in-out; /* Ajoute une transition pour une disparition en douceur */
+}
+
+.video-poster.hidden {
+    opacity: 0;
+}
+
+#responsiveVideo {
+    width: 100%;
+    height: auto;
+}
 
 /* POUR LE WEB COPI COLE */
 

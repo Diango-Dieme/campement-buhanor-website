@@ -28,35 +28,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ===== GESTION DE LA VIDÉO RESPONSIVE =====
-    const videoElement = document.getElementById('responsiveVideo');
-    if (videoElement) {
-        const mobileVideoSrc = 'sunset-plage-cap-skirring.mp4';
-        const desktopVideoSrc = 'AA.mp4';
-        const mobileBreakpoint = 968;
-        let currentVideoSrc = '';
+   const videoElement = document.getElementById('responsiveVideo');
+const posterImage = document.querySelector('.video-poster');
 
-        function setVideoSource() {
-            const newSrc = window.innerWidth <= mobileBreakpoint ? mobileVideoSrc : desktopVideoSrc;
-            if (newSrc !== currentVideoSrc) {
-                videoElement.src = newSrc;
-                videoElement.load();
-                videoElement.play().catch(error => {
-                    console.log('La lecture automatique a été bloquée ou une erreur est survenue :', error);
-                });
-                currentVideoSrc = newSrc;
-            }
-        }
-        
-        let resizeTimeout;
-        function handleResize() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(setVideoSource, 250);
-        }
-        
-        setVideoSource();
-        window.addEventListener('resize', handleResize);
-        window.addEventListener('orientationchange', setVideoSource);
+videoElement.addEventListener('canplay', () => {
+    // Masque l'image lorsque la vidéo est prête à être lue
+    if (posterImage) {
+        posterImage.classList.add('hidden');
     }
+});
+
+videoElement.addEventListener('play', () => {
+    // Masque l'image au cas où l'événement 'canplay' ne serait pas suffisant
+    if (posterImage) {
+        posterImage.classList.add('hidden');
+    }
+});
+
+// Vous pouvez également ajouter une logique pour le redimensionnement si les sources changent
+function setVideoSource() {
+    const mobileVideoSrc = 'sunset-plage-cap-skirring.mp4';
+    const desktopVideoSrc = 'AA.mp4';
+    const newSrc = window.innerWidth <= 968 ? mobileVideoSrc : desktopVideoSrc;
+    
+    if (videoElement.src.indexOf(newSrc) === -1) {
+        videoElement.src = newSrc;
+        videoElement.load();
+        
+        // Affiche à nouveau l'image le temps du chargement de la nouvelle vidéo
+        if (posterImage) {
+            posterImage.classList.remove('hidden');
+        }
+    }
+}
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(setVideoSource, 250);
+});
+
+setVideoSource(); // Appel initial
 
     // ===== LIGHTBOX =====
     const galleryItems = document.querySelectorAll('.gallery-item img');
