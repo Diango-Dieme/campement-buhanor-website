@@ -207,6 +207,70 @@ li:before {
     color: #d9dcd6;
     padding: 0 60PX;
 }
+   .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px;
+            background-color: #000;
+            flex-wrap: wrap;
+        }
+
+        .gallery-controls button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(145deg, #d6d6d6, #b8b8b8);
+            color: #2a2a2a;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 4px 8px rgba(0,0,0,0.3),
+                inset 1px 1px 2px rgba(255,255,255,0.7),
+                inset -1px -1px 2px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-controls button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .gallery-controls button:hover::before {
+            left: 100%;
+        }
+
+        .gallery-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 6px 12px rgba(0,0,0,0.4),
+                inset 1px 1px 2px rgba(255,255,255,0.8),
+                inset -1px -1px 2px rgba(0,0,0,0.1);
+            background: linear-gradient(145deg, #e0e0e0, #c2c2c2);
+        }
+
+        .gallery-controls button.active {
+            background: linear-gradient(145deg, #a8a8a8, #8a8a8a);
+            color: #fff;
+            box-shadow: 
+                inset 2px 2px 4px rgba(0,0,0,0.3),
+                inset -2px -2px 4px rgba(255,255,255,0.1);
+        }
+
+        .gallery-controls button.active:hover {
+            background: linear-gradient(145deg, #9a9a9a, #7c7c7c);
+        }
 
 .gallery-container {
     display: grid;

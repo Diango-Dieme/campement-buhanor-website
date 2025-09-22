@@ -250,3 +250,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// Vérifier si l'API de vibration est disponible sur l'appareil
+if ("vibrate" in navigator) {
+  // Ajouter un écouteur d'événement au 'click' sur toute la page (document)
+  document.addEventListener('click', (event) => {
+    // Vérifier si l'élément cliqué est un bouton
+    if (event.target.tagName === 'BUTTON') {
+      // Déclencher une vibration de 200ms
+      navigator.vibrate(200);
+    }
+  });
+}
+
