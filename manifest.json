@@ -1,0 +1,21 @@
+{
+  "name": "Campement Buhanor",
+  "short_name": "Buhanor",
+  "description": "Votre hôtel avec vue sur mer au Cap-Skirring, en Casamance.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#8F543E",
+  "theme_color": "#CE7650",
+  "icons": [
+    {
+      "src": "192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpg"
+    },
+    {
+      "src": "512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    }
+  ]
+}
