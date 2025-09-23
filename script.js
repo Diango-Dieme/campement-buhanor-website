@@ -250,15 +250,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-// Vérifier si l'API de vibration est disponible sur l'appareil
-if ("vibrate" in navigator) {
-  // Ajouter un écouteur d'événement au 'click' sur toute la page (document)
-  document.addEventListener('click', (event) => {
-    // Vérifier si l'élément cliqué est un bouton
-    if (event.target.tagName === 'BUTTON') {
-      // Déclencher une vibration de 200ms
-      navigator.vibrate(200);
-    }
-  });
+// Configuration de la vibration
+const VIBRATION_CONFIG = {
+  duration: 200,
+  enabled: true,
+  selectors: ['BUTTON', 'INPUT[type="button"]', 'INPUT[type="submit"]']
+};
+
+// Fonction utilitaire pour déclencher la vibration
+function triggerVibration(duration = VIBRATION_CONFIG.duration) {
+  if (VIBRATION_CONFIG.enabled && "vibrate" in navigator) {
+    navigator.vibrate(duration);
+  }
 }
+
+// Initialisation du système de vibration
+function initButtonVibration() {
+  if (!("vibrate" in navigator)) {
+    console.info('API de vibration non disponible sur cet appareil');
+    return;
+  }
+
+  document.addEventListener('click', (event) => {
+    // Vérifier si l'élément cliqué (ou un de ses parents) correspond aux sélecteurs
+    const targetElement = event.target.closest(VIBRATION_CONFIG.selectors.join(','));
+    if (targetElement) {
+      triggerVibration();
+    }
+  }, { passive: true });
+
+  console.info('Vibration tactile activée pour les boutons');
+}
+
+// Fonctions utilitaires pour contrôler la vibration
+const ButtonVibration = {
+  toggle: (enabled = !VIBRATION_CONFIG.enabled) => {
+    VIBRATION_CONFIG.enabled = enabled;
+    console.info(`Vibration tactile ${enabled ? 'activée' : 'désactivée'}`);
+  },
+
+  setDuration: (duration) => {
+    VIBRATION_CONFIG.duration = Math.max(0, Math.min(duration, 10000));
+    console.info(`Durée de vibration définie à ${VIBRATION_CONFIG.duration}ms`);
+  },
+
+  addSelector: (selector) => {
+    if (!VIBRATION_CONFIG.selectors.includes(selector)) {
+      VIBRATION_CONFIG.selectors.push(selector);
+      console.info(`Sélecteur ajouté: ${selector}`);
+    }
+  },
+
+  test: () => triggerVibration()
+};
+
+// Initialiser au chargement du DOM
+document.addEventListener('DOMContentLoaded', initButtonVibration);
+
+// Exposer l'API globalement (optionnel)
+window.ButtonVibration = ButtonVibration;
 
