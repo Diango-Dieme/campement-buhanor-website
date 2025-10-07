@@ -435,11 +435,30 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance: textfield; 
 }
+
+/* -- OPTIMISATION POUR LES CLICS SUR ORDINATEUR -- */
+input[type="date"] {
+    position: relative; /* Permet le positionnement absolu de l'indicateur */
+}
+
 input[type="date"]::-webkit-calendar-picker-indicator {
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
+    position: absolute; /* Positionné absolument pour couvrir */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    background: transparent; /* S'assure qu'aucun fond n'est affiché */
+    color: transparent; /* S'assure qu'aucune icône native n'est affichée */
+    opacity: 0; /* Rendu invisible, mais la zone fonctionnelle est là */
+    cursor: pointer; /* Indique la zone cliquable */
+    z-index: 2; /* S'assure qu'il est PAR DESSUS l'icône SVG */
+}
+
+/* Fix pour IE/Edge qui masque l'icône native qui gère le clic */
+input[type="date"]::-ms-expand {
+    display: none;
 }
 
 /* Réponse adaptative (responsive) */
