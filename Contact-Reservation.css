@@ -264,86 +264,210 @@ h1, h2 {
         .whatsapp-button i {
             margin-right: 8px;
         }
-/* Section du formulaire (à droite) */
+/* Section du formulaire (à droite) - Design Minimaliste */
 .form-section {
     flex: 1;
-    min-width: 400px; /* Largeur minimale pour cette section */
-    padding: 40px;
+    min-width: 400px;
+    padding: 60px 50px;
     background-color: #ffffff;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Ombre pour détacher légèrement */
+    /* Ligne verticale retirée pour un look plus clean */
 }
 
-.form-section h2 {
-    font-size: 2em;
-    color: #45261d;
-    margin-bottom: 25px;
+/* ❌ L'ancienne ligne verticale a été retirée pour un look plus moderne. */
+/* .form-section::before {} */
+
+
+/* Style du Titre Principal du Formulaire (ex: CONTACTEZ-NOUS PAR MAIL) */
+.form-section h2:first-child {
+    font-family: "Revalia", sans-serif; /* Police distinctive pour la marque */
+    font-size: 2.8em; /* Taille légèrement augmentée */
+    font-weight: 400; /* Revalia n'a qu'un poids normal */
+    color: #45261d; /* Couleur primaire foncée pour l'impact */
+    margin-bottom: 40px;
     text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Ligne décorative sous le titre principal */
+.form-section h2:first-child::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* Ligne plus longue */
+    height: 3px; /* Ligne plus épaisse */
+    background-color: #CE7650; /* Couleur accent marron */
+    border-radius: 2px;
+}
+
+/* Styles pour les Sous-titres (ex: 1. Détails du Séjour, 2. Vos Coordonnées) */
+.form-section h2:not(:first-child) {
+    font-family: "Montserrat", sans-serif; /* Police lisible et moderne */
+    font-size: 1.4em; /* Plus élégant et moins agressif */
+    font-weight: 600; /* Gras pour la hiérarchie */
+    color: #000814;
+    margin-bottom: 15px;
+    margin-top: 40px; /* Marge supérieure réduite */
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 8, 20, 0.1); /* Ligne de séparation très subtile */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 35px; /* Augmente l'espace entre les groupes */
+    position: relative;
 }
 
 .form-group label {
+    font-family: "Montserrat", sans-serif; /* Police de marque */
     display: block;
-    margin-bottom: 7px;
-    color: #45261d;
-    font-size: 1em;
+    margin-bottom: 8px; /* Marge réduite pour rapprocher du champ */
+    color: #45261d; /* Couleur primaire foncée pour l'importance */
+    font-size: 0.8em; /* Petit, élégant et discret */
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 /* Styles pour les champs Nom et Prénom côte à côte */
 .name-group {
-    display: inline-block; /* Permet de les aligner */
-    width: calc(50% - 10px); /* Moitié de la largeur moins l'espace */
-    vertical-align: top; /* Alignement en haut */
+    display: inline-block;
+    width: calc(50% - 10px);
+    vertical-align: top;
 }
 
 .name-group:first-child {
-    margin-right: 20px; /* Espace entre Prénom et Nom */
+    margin-right: 20px;
 }
 
-
+/* Styles pour TOUS les champs d'entrée (text, email, date, number, select, textarea) */
 input[type="text"],
 input[type="email"],
-input[type="date"], /* <-- NOUVEAU */
-input[type="number"], /* <-- NOUVEAU */
-select, /* <-- NOUVEAU */
+input[type="date"],
+input[type="number"],
+select,
 textarea {
+    font-family: "Montserrat", sans-serif; /* Cohérence de police */
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #000814;
-    border-radius: 4px;
-    box-sizing: border-box; 
-    font-size: 1em;
-    color: #45261d;
-    background-color: #fafafa;
+    padding: 10px 0; /* Padding vertical réduit pour look plus fin */
+    border: none;
+    border-bottom: 1px solid rgba(69, 38, 29, 0.2); /* Ligne de séparation par défaut (couleur brand) */
+    border-radius: 0;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    color: #000814;
+    background-color: transparent;
+    transition: border-bottom-color 0.3s ease, background-color 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
-/* Styles pour les titres H2 à l'intérieur du formulaire */
-.form-section h2 {
-    font-size: 1.5em; /* Taille légèrement réduite */
-    color: #45261d; /* Couleur sombre sur fond clair */
-    margin-bottom: 15px;
-    text-align: left;
-    border-bottom: 2px solid #ccc; /* Ligne de séparation subtile */
-    padding-bottom: 5px;
-    margin-top: 15px;
+/* Placeholder modernisé */
+input::placeholder, textarea::placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: rgba(69, 38, 29, 0.5); /* Couleur plus douce */
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: yellow; /* Bordure bleue au focus */
+/* Hover et Focus pour un effet "material" */
+input:hover, select:hover, textarea:hover {
+    border-bottom-color: #45261d; /* Ligne plus foncée au survol */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-bottom-color: #CE7650; /* Couleur accent (orange) au focus */
+    border-bottom-width: 2px;
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-    background-color: #ffffff; /* Fond blanc au focus */
+    background-color: rgba(206, 118, 80, 0.05); /* Arrière-plan très léger au focus */
+    padding-bottom: 9px; /* Maintient la hauteur pour le border-bottom-width de 2px */
 }
 
-textarea {
-    resize: vertical; /* Permet uniquement le redimensionnement vertical */
-    min-height: 120px; /* Hauteur minimale du textarea */
+/* Ligne animée (soulignement) — Maintenu pour le côté sophistiqué */
+.form-group::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #45261d; /* Ligne animée en couleur primaire foncée */
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.form-group:focus-within::after {
+    width: 100%;
+}
 
+/* Styles spécifiques pour le champ SELECT (liste déroulante) */
+select {
+    cursor: pointer;
+    /* Styles pour la flèche personnalisée - Utilisez le même SVG que dans la correction précédente */
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8"%3E%3Cpath fill="%2345261d" d="M6 8L0 0h12z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px; 
+}
+
+/* Styles pour le champ DATE (icône de calendrier) */
+input[type="date"] {
+    /* Utilisation de l'icône de calendrier SVG pour l'UX */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%2345261d" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 2v14H4V5h16zm-5 7h2v-2h-2v2zm-4 0h2v-2h-2v2zm-4 0h2v-2H7v2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 35px;
+}
+
+/* Suppression des éléments natifs (Spinners, icônes) pour un design plat */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield; 
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Réponse adaptative (responsive) */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 40px 30px;
+        min-width: 100%;
+    }
+    
+    .name-group {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 25px; /* Espacement corrigé */
+    }
+    
+    .form-section h2:first-child {
+        font-size: 2em;
+        letter-spacing: 1.2px;
+    }
+    
+    .form-section h2:not(:first-child) {
+        font-size: 1.3em;
+        margin-top: 30px;
+    }
+    .form-group {
+        margin-bottom: 30px;
+    }
+}
 /* Bouton d'envoi */
 button[type="submit"] {
     background-color: #000814; /* Couleur primaire */
