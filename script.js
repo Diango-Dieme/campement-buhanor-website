@@ -154,21 +154,199 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ===== FORMULAIRE DE CONTACT =====
+      // ===== FORMULAIRE DE CONTACT (NOUVELLE VERSION RESERVATION) =====
     const form = document.getElementById('contactForm');
     if (form) {
+        // Déclaration des champs de réservation
+        const dateArriveeInput = document.getElementById('dateArrivee');
+        const dateDepartInput = document.getElementById('dateDepart');
+        const nombreAdultesInput = document.getElementById('nombreAdultes');
+        const nombreEnfantsInput = document.getElementById('nombreEnfants');
+        const typeChambreInput = document.getElementById('typeChambre');
+        
+        // Déclaration des champs de contact
         const firstNameInput = document.getElementById('firstName');
         const lastNameInput = document.getElementById('lastName');
         const emailInput = document.getElementById('email');
         const messageInput = document.getElementById('message');
-        const firstNameError = document.getElementById('firstNameError');
+        
+        // Messages d'erreurs
+        const dateArriveeError = document.getElementById('dateArriveeError');
+        const dateDepartError = document.getElementById('dateDepartError');
+        const nombreAdultesError = document.getElementById('nombreAdultesError');
+        const typeChambreError = document.getElementById('typeChambreError');
         const lastNameError = document.getElementById('lastNameError');
         const emailError = document.getElementById('emailError');
-        const messageError = document.getElementById('messageError');
         const successMessage = document.getElementById('successMessage');
+
+        // Fonction d'affichage des erreurs
+        const setError = (element, message) => {
+            const errorDisplay = document.getElementById(element.id + 'Error');
+            errorDisplay.textContent = message;
+            errorDisplay.style.display = message ? 'block' : 'none';
+        };
+
+        // Fonction de validation de l'e-mail
+        const isValidEmail = (email) => {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        };
         
-        // ... (le reste du code du formulaire est inchangé)
-        // ... (votre code ici, car il était déjà correct)
+        // Fonction de validation des champs de date
+        const validateDateRange = () => {
+            let isValid = true;
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); 
+            const dateArriveeValue = dateArriveeInput.value;
+            const dateDepartValue = dateDepartInput.value;
+            const dateArrivee = dateArriveeValue ? new Date(dateArriveeValue) : null;
+            const dateDepart = dateDepartValue ? new Date(dateDepartValue) : null;
+            
+            setError(dateArriveeInput, '');
+            setError(dateDepartInput, '');
+
+            if (!dateArrivee) {
+                setError(dateArriveeInput, 'La date d\'arrivée est obligatoire.');
+                isValid = false;
+            } else if (dateArrivee < today) {
+                setError(dateArriveeInput, 'La date d\'arrivée ne peut pas être passée.');
+                isValid = false;
+            }
+
+            if (!dateDepart) {
+                setError(dateDepartInput, 'La date de départ est obligatoire.');
+                isValid = false;
+            }
+
+            if (dateArrivee && dateDepart && dateDepart <= dateArrivee) {
+                setError(dateDepartInput, 'La date de départ doit être postérieure à l\'arrivée.');
+                isValid = false;
+            }
+            
+            // Validation spéciale pour la location à la journée
+            if (typeChambreInput.value === 'JOURNEE') {
+                if (dateArriveeValue !== dateDepartValue) {
+                    setError(dateArriveeInput, 'Les dates d\'arrivée et de départ doivent être identiques pour la location à la journée.');
+                    setError(dateDepartInput, 'Les dates d\'arrivée et de départ doivent être identiques pour la location à la journée.');
+                    isValid = false;
+                }
+            }
+
+
+            return isValid;
+        };
+
+        // Fonction de validation de tous les inputs
+        const validateInputs = () => {
+            let isValid = true;
+
+            // 1. Validation des champs de réservation (Dates)
+            if (!validateDateRange()) {
+                isValid = false;
+            }
+
+            // 2. Type de Chambre
+            if (typeChambreInput.value === "") {
+                setError(typeChambreInput, 'Veuillez sélectionner un type de chambre.');
+                isValid = false;
+            } else {
+                setError(typeChambreInput, '');
+            }
+            
+            // 3. Nombre d'Adultes
+            const adultes = parseInt(nombreAdultesInput.value);
+            if (isNaN(adultes) || adultes < 1) {
+                setError(nombreAdultesInput, 'Minimum 1 adulte requis.');
+                isValid = false;
+            } else {
+                setError(nombreAdultesInput, '');
+            }
+            
+            // 4. Nom
+            if (lastNameInput.value.trim() === "") {
+                setError(lastNameInput, 'Le nom est obligatoire.');
+                isValid = false;
+            } else {
+                setError(lastNameInput, '');
+            }
+            
+            // 5. E-mail
+            if (emailInput.value.trim() === "") {
+                setError(emailInput, 'L\'e-mail est obligatoire.');
+                isValid = false;
+            } else if (!isValidEmail(emailInput.value.trim())) {
+                setError(emailInput, 'Format d\'e-mail invalide.');
+                isValid = false;
+            } else {
+                setError(emailInput, '');
+            }
+
+            return isValid;
+        };
+        
+        // Écoute des changements pour les erreurs de date
+        dateArriveeInput.addEventListener('change', validateDateRange);
+        dateDepartInput.addEventListener('change', validateDateRange);
+        typeChambreInput.addEventListener('change', validateDateRange); // pour la logique "Journée"
+
+        // Gestion de la soumission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            successMessage.style.display = 'none';
+
+            if (validateInputs()) {
+                const formData = {
+                    dateArrivee: dateArriveeInput.value,
+                    dateDepart: dateDepartInput.value,
+                    typeChambre: typeChambreInput.value,
+                    nombreAdultes: nombreAdultesInput.value,
+                    nombreEnfants: nombreEnfantsInput.value,
+                    firstName: firstNameInput.value,
+                    lastName: lastNameInput.value,
+                    email: emailInput.value,
+                    message: messageInput.value
+                };
+
+                const submitButton = form.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Envoi en cours...';
+
+                try {
+                    const response = await fetch('process_form.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        successMessage.textContent = result.message;
+                        successMessage.style.backgroundColor = '#d4edda';
+                        successMessage.style.color = '#155724';
+                        successMessage.style.display = 'block';
+                        form.reset(); // Vider le formulaire
+                        
+                    } else {
+                        successMessage.textContent = 'Erreur: ' + result.message;
+                        successMessage.style.backgroundColor = '#f8d7da';
+                        successMessage.style.color = '#721c24';
+                        successMessage.style.display = 'block';
+                    }
+
+                } catch (error) {
+                    successMessage.textContent = 'Une erreur réseau est survenue. Veuillez réessayer.';
+                    successMessage.style.backgroundColor = '#f8d7da';
+                    successMessage.style.color = '#721c24';
+                    successMessage.style.display = 'block';
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Envoyer ma demande de réservation';
+                }
+            }
+        });
     }
 
     // ===== CARROUSEL SWIPER =====

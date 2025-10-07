@@ -93,29 +93,68 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                    </div>
                     <h2>CONTACTEZ-NOUS PAR MAIL</h2>
                         <form id="contactForm">
-                            <div class="form-group name-group">
-                               <label for="firstName">Prénom</label>
-                               <input type="text" id="firstName" name="firstName" placeholder="Prénom">
-                               <div class="error-message" id="firstNameError"></div>
-                            </div>
-                            <div class="form-group name-group">
-                               <label for="lastName">Nom *</label>
-                               <input type="text" id="lastName" name="lastName" placeholder="Nom *" required>
-                               <div class="error-message" id="lastNameError"></div>
-                            </div>
-                            <div class="form-group">
-                               <label for="email">E-mail *</label>
-                               <input type="email" id="email" name="email" placeholder="E-mail *" required>
-                              <div class="error-message" id="emailError"></div>
-                            </div>
-                            <div class="form-group">
-                               <label for="message">Commentaire ou message</label>
-                               <textarea id="message" name="message" rows="7" placeholder="Votre message"></textarea>
-                               <div class="error-message" id="messageError"></div>
-                            </div>
-                            <button type="submit">Envoyer</button>
-                            <div class="success-message" id="successMessage"></div>
-                        </form>
+    
+    <h2>1. Détails du Séjour</h2>
+    <div class="form-group name-group">
+        <label for="dateArrivee">Date d'arrivée *</label>
+        <input type="date" id="dateArrivee" name="dateArrivee" required>
+        <div class="error-message" id="dateArriveeError"></div>
+    </div>
+    <div class="form-group name-group">
+        <label for="dateDepart">Date de départ *</label>
+        <input type="date" id="dateDepart" name="dateDepart" required>
+        <div class="error-message" id="dateDepartError"></div>
+    </div>
+
+    <div class="form-group name-group">
+        <label for="nombreAdultes">Adultes *</label>
+        <input type="number" id="nombreAdultes" name="nombreAdultes" min="1" value="1" required>
+        <div class="error-message" id="nombreAdultesError"></div>
+    </div>
+    <div class="form-group name-group">
+        <label for="nombreEnfants">Enfants (0-12 ans)</label>
+        <input type="number" id="nombreEnfants" name="nombreEnfants" min="0" value="0">
+        <div class="error-message" id="nombreEnfantsError"></div>
+    </div>
+
+    <div class="form-group">
+        <label for="typeChambre">Type de Chambre Souhaité *</label>
+        <select id="typeChambre" name="typeChambre" required>
+            <option value="">-- Sélectionnez une chambre --</option>
+            <option value="BADIAT_ENAMPOR">BADIAT / ENAMPOR (Balcon Vue Mer - Premium - 15 000 XOF)</option>
+            <option value="SELEKI_ETAMA">SELEKI / ETAMA (Terrasse Vue Mer - Confort - 13 500 XOF)</option>
+            <option value="ECO">Standard (Économique - 12 000 XOF)</option>
+            <option value="JOURNEE">Location à la Journée (9h-18h - 10 000 XOF)</option>
+        </select>
+        <div class="error-message" id="typeChambreError"></div>
+    </div>
+    
+    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+    <h2>2. Vos Coordonnées</h2>
+    <div class="form-group name-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Prénom">
+        <div class="error-message" id="firstNameError"></div>
+    </div>
+    <div class="form-group name-group">
+        <label for="lastName">Nom *</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Nom *" required>
+        <div class="error-message" id="lastNameError"></div>
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" name="email" placeholder="E-mail *" required>
+        <div class="error-message" id="emailError"></div>
+    </div>
+    <div class="form-group">
+        <label for="message">Commentaire ou demande spéciale</label>
+        <textarea id="message" name="message" rows="4" placeholder="Demande de transfert depuis Ziguinchor, besoin d'un lit bébé, allergie, etc."></textarea>
+        <div class="error-message" id="messageError"></div>
+    </div>
+    <button type="submit">Envoyer ma demande de réservation</button>
+    <div class="success-message" id="successMessage"></div>
+</form>
                   </div>
               </div>
         </section>

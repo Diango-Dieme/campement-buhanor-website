@@ -304,15 +304,29 @@ h1, h2 {
 
 input[type="text"],
 input[type="email"],
+input[type="date"], /* <-- NOUVEAU */
+input[type="number"], /* <-- NOUVEAU */
+select, /* <-- NOUVEAU */
 textarea {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #000814;
     border-radius: 4px;
-    box-sizing: border-box; /* Inclut padding et bordure dans la largeur/hauteur */
+    box-sizing: border-box; 
     font-size: 1em;
     color: #45261d;
-    background-color: #fafafa; /* Très légèrement gris pour le fond des champs */
+    background-color: #fafafa;
+}
+
+/* Styles pour les titres H2 à l'intérieur du formulaire */
+.form-section h2 {
+    font-size: 1.5em; /* Taille légèrement réduite */
+    color: #45261d; /* Couleur sombre sur fond clair */
+    margin-bottom: 15px;
+    text-align: left;
+    border-bottom: 2px solid #ccc; /* Ligne de séparation subtile */
+    padding-bottom: 5px;
+    margin-top: 15px;
 }
 
 input[type="text"]:focus,
