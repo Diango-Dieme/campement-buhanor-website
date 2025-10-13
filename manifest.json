@@ -2,25 +2,30 @@
   "name": "Campement Buhanor",
   "short_name": "Buhanor",
   "description": "Votre hôtel avec vue sur mer au Cap-Skirring, en Casamance. Séjournez en face de la plage, profitez de nos excursions et du Wi-Fi.",
-  "start_url": "/",
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#8F543E",
-  "theme_color": "#CE7650",
+  "theme_color": "#45261D",
+  "categories": ["travel", "hotel", "lifestyle", "personalization"],
   "icons": [
     {
-      "src": "192.jpg",
+      "src": "/192.jpg",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "purpose": "any"
     },
     {
-      "src": "512.jpg",
+      "src": "/512.jpg",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/jpeg",
+      "purpose": "any"
     },
     {
-      "src": "maskable.png",
+      "src": "/maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -28,14 +33,14 @@
   ],
   "screenshots": [
     {
-      "src": "chambre-acces-balcon-vue-plage-cap-skirring1.jpg",
+      "src": "/chambre-acces-balcon-vue-plage-cap-skirring1.jpg",
       "sizes": "1280x720",
       "type": "image/jpeg",
       "form_factor": "wide",
       "label": "Une de nos chambres vue mer avec balcon"
     },
     {
-      "src": "plage-buhanor-vue-generale-chemin.jpg",
+      "src": "/plage-buhanor-vue-generale-chemin.jpg",
       "sizes": "720x1280",
       "type": "image/jpeg",
       "label": "Accès direct à la plage du Cap Randoulene"
@@ -46,14 +51,21 @@
       "name": "Nos Activités",
       "short_name": "Activités",
       "description": "Découvrez nos excursions en Casamance",
-      "url": "/activites.html", 
+      "url": "/activités.html",
       "icons": [{ "src": "/192.jpg", "sizes": "192x192" }]
     },
     {
       "name": "Réserver",
       "short_name": "Réservation",
       "description": "Contactez-nous ou réservez votre séjour",
-      "url": "/reservation-contact.html", 
+      "url": "/reservation-contact.html",
+      "icons": [{ "src": "/192.jpg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Galerie Photos",
+      "short_name": "Photos",
+      "description": "Découvrez notre campement en images",
+      "url": "/galerie.html",
       "icons": [{ "src": "/192.jpg", "sizes": "192x192" }]
     }
   ]
