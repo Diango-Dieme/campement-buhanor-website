@@ -154,34 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-       // =============================
-      // LOGIQUE POUR FILTRE GALERIE
-     // =============================
-       document.addEventListener('DOMContentLoaded', function() {
-       const controls = document.querySelector('.gallery-controls');
-       const galleryItems = document.querySelectorAll('.gallery-item');
-
-       if (controls && galleryItems.length > 0) {
-        controls.addEventListener('click', (e) => {
-            if (e.target.classList.contains('control')) {
-                // Gérer le bouton actif
-                controls.querySelector('.active').classList.remove('active');
-                e.target.classList.add('active');
-
-                const filter = e.target.getAttribute('data-filter');
-
-                // Filtrer les images
-                galleryItems.forEach(item => {
-                    item.classList.add('hide'); // Cacher tout par défaut
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.classList.remove('hide'); // Montrer si ça correspond
-                    }
-                });
-              }
-           });
-          }
-       });
-
       // ===== FORMULAIRE DE CONTACT (NOUVELLE VERSION RESERVATION) =====
     const form = document.getElementById('contactForm');
     if (form) {

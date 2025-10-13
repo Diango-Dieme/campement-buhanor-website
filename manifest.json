@@ -43,18 +43,18 @@
   ],
   "shortcuts": [
     {
-      "name": "Excursions",
-      "short_name": "Excursions",
+      "name": "Nos Activités",
+      "short_name": "Activités",
       "description": "Découvrez nos excursions en Casamance",
-      "url": "/excursions.html",
-      "icons": [{ "src": "/shortcut-excursions.png", "sizes": "96x96" }]
+      "url": "/activites.html", 
+      "icons": [{ "src": "/192.jpg", "sizes": "192x192" }]
     },
     {
-      "name": "Contact",
-      "short_name": "Contact",
-      "description": "Appelez-nous ou envoyez-nous un e-mail",
-      "url": "/contact.html",
-      "icons": [{ "src": "/shortcut-contact.png", "sizes": "96x96" }]
+      "name": "Réserver",
+      "short_name": "Réservation",
+      "description": "Contactez-nous ou réservez votre séjour",
+      "url": "/reservation-contact.html", 
+      "icons": [{ "src": "/192.jpg", "sizes": "192x192" }]
     }
   ]
 }
