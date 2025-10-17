@@ -897,7 +897,319 @@ li:before {
 }
 
 
+    /* ==========================
+   SECTION INSTAGRAM
+   ========================== */
 
+.instagram-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8edeb; /* Utilise la couleur de fond principale */
+}
+
+.instagram-section h2 {
+    font-size: 2.5em;
+    color: #45261d; /* Couleur titre foncée */
+    margin-bottom: 10px;
+}
+
+.instagram-section p {
+    font-size: 1.2em;
+    color: #8F543E; /* Couleur accent marron */
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instagram-follow-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #45261d;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.instagram-follow-button:hover {
+    background-color: #CE7650; /* Couleur accent au survol */
+    transform: translateY(-3px);
+}
+
+.lightwidget-widget {
+    max-width: 1000px; /* Limite la largeur de la galerie sur grands écrans */
+    margin: 0 auto;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .instagram-section h2 {
+        font-size: 2em;
+    }
+    .instagram-section p {
+        font-size: 1em;
+    }
+}
+
+/* ========== NOUVELLE SECTION BLOG HAUT DE GAMME ========== */
+.blog-preview-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    padding: 80px 20px;
+    overflow: hidden; /* Empêche les décorations de créer des barres de défilement */
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.section-header h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #CE7650, #8F543E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent; /* Fallback pour les anciens navigateurs */
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.section-header .subtitle {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: #8F543E;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.blog-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #45261d;
+    border: 2px solid rgba(206, 118, 80, 0.1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: fadeInScale 0.6s ease-out both;
+    box-shadow: 0 4px 20px rgba(69, 38, 29, 0.08);
+}
+
+.blog-card:nth-child(1) { animation-delay: 0.1s; }
+.blog-card:nth-child(2) { animation-delay: 0.2s; }
+.blog-card:nth-child(3) { animation-delay: 0.3s; }
+
+.blog-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, #CE7650, #8F543E);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.blog-card:hover::before {
+    opacity: 1;
+}
+
+.blog-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(69, 38, 29, 0.15),
+                0 0 60px rgba(206, 118, 80, 0.1);
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #fdf3f1;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.blog-card:hover img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(248, 237, 235, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.blog-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.blog-card-content {
+    padding: 32px;
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+}
+
+.blog-card-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    color: #45261d;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover h4 {
+    background: linear-gradient(135deg, #CE7650, #8F543E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.blog-card-content p {
+    color: #8F543E;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #CE7650;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: gap 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.blog-card:hover .read-more {
+    gap: 16px;
+}
+
+.read-more::after {
+    content: '→';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .read-more::after {
+    transform: translateX(4px);
+}
+
+.cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.cta-wrapper .reach-out-button1 {
+    position: relative;
+    padding: 20px 60px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #CE7650, #8F543E);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 8px 30px rgba(206, 118, 80, 0.25);
+    letter-spacing: 0.5px;
+}
+.cta-wrapper .reach-out-button1 span {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-wrapper .reach-out-button1:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 15px 50px rgba(206, 118, 80, 0.4);
+}
+.cta-wrapper .reach-out-button1:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 1200px) {
+    .blog-preview-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-preview-section {
+        padding: 40px 16px;
+    }
+    .section-header {
+        margin-bottom: 50px;
+    }
+    .blog-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .image-wrapper {
+        height: 220px;
+    }
+    .blog-card-content {
+        padding: 24px;
+    }
+    .cta-wrapper .reach-out-button1 {
+        padding: 18px 40px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 320px;
+    }
+}
   /* Styles généraux du footer */
 .footer {
     background-color: white; /* Couleur de fond verte foncée */
