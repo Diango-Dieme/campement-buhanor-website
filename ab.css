@@ -1569,3 +1569,29 @@ li:before {
         width: 100px;
     }
 }
+/* ========== STYLES POUR LE SLIDER D'AVIS ========== */
+.reviews-swiper {
+    padding-bottom: 60px; /* Espace pour les points de navigation */
+}
+
+.reviews-swiper .swiper-slide {
+    height: auto; /* Permet aux cartes d'avoir une hauteur flexible */
+    display: flex;
+}
+
+.reviews-swiper .review-card-new {
+    width: 100%; /* La carte prend toute la largeur du slide */
+}
+
+.reviews-swiper .swiper-pagination-bullet {
+    background: var(--couleur-neutre-grise);
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+}
+
+.reviews-swiper .swiper-pagination-bullet-active {
+    background: var(--couleur-accent-marron);
+    width: 12px;
+    height: 12px;
+}
