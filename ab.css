@@ -897,66 +897,7 @@ li:before {
 }
 
 
-    /* ==========================
-   SECTION INSTAGRAM
-   ========================== */
-
-.instagram-section {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f8edeb; /* Utilise la couleur de fond principale */
-}
-
-.instagram-section h2 {
-    font-size: 2.5em;
-    color: #45261d; /* Couleur titre foncée */
-    margin-bottom: 10px;
-}
-
-.instagram-section p {
-    font-size: 1.2em;
-    color: #8F543E; /* Couleur accent marron */
-    margin-bottom: 25px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.instagram-follow-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #45261d;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.instagram-follow-button:hover {
-    background-color: #CE7650; /* Couleur accent au survol */
-    transform: translateY(-3px);
-}
-
-.lightwidget-widget {
-    max-width: 1000px; /* Limite la largeur de la galerie sur grands écrans */
-    margin: 0 auto;
-}
-
-/* Responsive pour mobile */
-@media (max-width: 768px) {
-    .instagram-section h2 {
-        font-size: 2em;
-    }
-    .instagram-section p {
-        font-size: 1em;
-    }
-}
-
+  
 /* ========== NOUVELLE SECTION BLOG HAUT DE GAMME ========== */
 .blog-preview-section {
     max-width: 1400px;
@@ -1577,10 +1518,6 @@ li:before {
 .reviews-swiper .swiper-slide {
     height: auto; /* Permet aux cartes d'avoir une hauteur flexible */
     display: flex;
-}
-
-.reviews-swiper .review-card-new {
-    width: 100%; /* La carte prend toute la largeur du slide */
 }
 
 .reviews-swiper .swiper-pagination-bullet {
