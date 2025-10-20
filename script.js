@@ -187,30 +187,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
-// ===== GESTION DU MODE SOMBRE =====
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-    const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme) {
-        document.body.classList.add(currentTheme);
-    
-        if (currentTheme === 'dark-mode') {
-            toggleSwitch.checked = true;
-        }
+// ===== CARROUSEL POUR LES ARTICLES DE BLOG =====
+    if (document.querySelector('.blog-swiper')) {
+        new Swiper('.blog-swiper', {
+            loop: true,
+            autoplay: {
+                delay: 7000, // Une vitesse un peu plus lente pour laisser le temps de lire
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: {
+                el: '.blog-preview-section .swiper-pagination',
+                clickable: true,
+            },
+            // Responsive: change le nombre de slides visibles selon la taille de l'écran
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                },
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
+                }
+            }
+        });
     }
-
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-            localStorage.setItem('theme', '');
-        }    
-    }
-
-    if (toggleSwitch) {
-        toggleSwitch.addEventListener('change', switchTheme, false);
-    }
-});

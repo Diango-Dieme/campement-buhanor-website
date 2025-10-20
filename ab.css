@@ -70,39 +70,84 @@ header {
     top: 0;
     z-index: 1000;
 }
-.whatsapp-float {
+/* ======================================================= */
+/* == BOUTON WHATSAPP RESPONSIVE (ICONE SUR MOBILE)    == */
+/* ======================================================= */
+
+/* Style de base pour MOBILE (simple icône) */
+.whatsapp-fab {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    border-radius: 50%;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%; /* Cercle parfait */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    transition: all 0.3s ease;
     text-decoration: none;
-    animation: pulse 2s infinite;
+    transition: transform 0.2s ease;
 }
 
-.whatsapp-float svg {
+/* Petit effet au toucher sur mobile */
+.whatsapp-fab:active {
+    transform: scale(0.95);
+}
+
+.whatsapp-fab-icon {
     width: 30px;
     height: 30px;
+    flex-shrink: 0;
+}
+
+.whatsapp-fab-icon svg {
+    width: 100%;
+    height: 100%;
     fill: #fff;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
+/* Le texte est caché par défaut (pour les mobiles) */
+.whatsapp-fab-text {
+    display: none;
+}
+
+/* Styles pour les GRANDS ÉCRANS (à partir de 769px de large) */
+@media (min-width: 769px) {
+    .whatsapp-fab {
+        /* On réinitialise la transition pour l'effet d'extension */
+        transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        overflow: hidden;
     }
-    50% {
-        transform: scale(1.1);
+
+    .whatsapp-fab:hover {
+        width: 225px; /* Le bouton s'étend */
+        border-radius: 50px; /* Forme de pilule */
+        justify-content: flex-start;
+        padding-left: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
     }
-    100% {
-        transform: scale(1);
+
+    /* On réaffiche le texte et on prépare son animation */
+    .whatsapp-fab-text {
+        display: block;
+        white-space: nowrap;
+        margin-left: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+    }
+
+    /* L'animation du texte se déclenche au survol du bouton */
+    .whatsapp-fab:hover .whatsapp-fab-text {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -1614,4 +1659,64 @@ li:before {
     height: 8px;
     background-color: white;
     border-radius: 2px;
+}
+/* ========================================= */
+/* ==   STYLES POUR LE CARROUSEL DE BLOG   == */
+/* ========================================= */
+
+/* Conteneur principal du carrousel */
+.blog-swiper {
+    width: 100%;
+    padding-bottom: 60px; /* Espace pour les points de navigation */
+}
+
+/* Chaque élément du carrousel (slide) */
+.blog-swiper .swiper-slide {
+    height: auto; /* Permet aux cartes d'avoir une hauteur flexible */
+    display: flex;
+    justify-content: center;
+}
+
+/* S'assure que la carte remplit bien chaque slide */
+.blog-swiper .blog-card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Donne une hauteur fixe aux images pour un alignement parfait */
+.blog-swiper .blog-card .image-wrapper {
+   height: 250px;
+}
+
+/* Permet au contenu textuel de remplir l'espace restant */
+.blog-swiper .blog-card .blog-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-swiper .blog-card .blog-card-content p {
+    flex-grow: 1; /* Pousse le lien "Lire la suite" en bas */
+}
+
+/* On n'a plus besoin de la grille CSS, car Swiper gère la disposition */
+.blog-preview-grid {
+   /* Les anciennes propriétés de grille ne sont plus nécessaires */
+   margin-bottom: 0;
+}
+
+/* Style des points de navigation (pagination) */
+.blog-swiper .swiper-pagination-bullet {
+    background: var(--couleur-neutre-grise);
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+}
+
+.blog-swiper .swiper-pagination-bullet-active {
+    background: var(--couleur-accent-marron);
+    width: 12px;
+    height: 12px;
 }
