@@ -1532,3 +1532,86 @@ li:before {
     width: 12px;
     height: 12px;
 }
+/* ========================================= */
+/* ==  ANIMATION DE L'EN-TÊTE D'ACCUEIL   == */
+/* ========================================= */
+
+/* 1. Définition des animations (les "Keyframes") */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* Le texte part d'un peu plus bas */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 0.8; /* L'indicateur de scroll apparaît en fondu */
+  }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Crée un mouvement de pulsation vers le bas */
+  }
+}
+
+
+/* 2. Application des animations aux éléments */
+
+.animated-header .fade-in-up {
+  opacity: 0; /* Important : cache les éléments au départ */
+  animation-name: fadeInUp;
+  animation-duration: 0.9s; /* Durée de l'animation */
+  animation-fill-mode: forwards; /* Garde l'état final de l'animation */
+  animation-timing-function: ease-out;
+}
+
+/* 3. Délais pour chaque élément */
+
+.animated-header .delay-1 {
+  animation-delay: 0.5s; /* "Bienvenue au" apparaît après 0.5s */
+}
+.animated-header .delay-2 {
+  animation-delay: 1.0s; /* "Campement BUHANOR" apparaît après 1s */
+}
+.animated-header .delay-3 {
+  animation-delay: 1.5s; /* Le bouton apparaît après 1.5s */
+}
+
+
+/* 4. Style et animation de l'indicateur de défilement */
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 40px; /* Position en bas de l'en-tête */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+    opacity: 0; /* Caché au départ */
+    /* Apparition après les textes, puis pulsation infinie */
+    animation: fadeIn 1s ease-out 2.5s forwards, scroll-pulse 2.5s infinite 3.5s;
+}
+
+.scroll-down-indicator::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background-color: white;
+    border-radius: 2px;
+}

@@ -21,10 +21,10 @@ body, h1, h2, h3, p, ul, li {
   font-style: normal;
 }
 
-.montserrat-regular { /* Remplacer par la classe générée par Google Fonts si différente */
+.montserrat-regular {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 400; /* Exemple, ajustez selon votre lien Google Fonts */
+  font-weight: 400;
   font-style: normal;
 }
 /*site Buhanor*/
@@ -32,11 +32,10 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   background: #E2E5DE;
-  color: #3B260E; /* Couleur de texte par défaut */
+  color: #3B260E;
 }
 
 .montserrat-<uniquifier> {
-  
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
@@ -44,7 +43,6 @@ body {
 
 
 header {
-    background-color: ;
     color: #e7e7de ;
     width: 100%;
     position: sticky;
@@ -60,20 +58,19 @@ header {
     left: 0px;
     right: 0px;
     background-color:#45261d;
-    
 }
 
 .navbar img{
-  width: 100px; /* Taille du logo dans la nav */
+  width: 100px;
   height: auto;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 /* Liens de navigation */
 .nav-links {
     list-style: none;
     margin: 5px 59px;
     padding: 0;
-    display: flex; /* Affiche les liens côte à côte par défaut (grands écrans) */
+    display: flex;
     font-size: 1.2em;
     gap: 15px;
 }
@@ -138,7 +135,6 @@ li:before {
 
 /* ===== Section Hero ===== */
 .hero {
-    /* Remplacez 'city-background.jpg' par le chemin de votre image */
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.0)), url('plus-belle-plage-senegal-cap-skirring-buhanor.jpg');
     height: 400px;
     background-position: center;
@@ -182,31 +178,23 @@ li:before {
 }
 
 
-.BU1 { /* Logo principal dans la section d'accueil */
+.BU1 {
   width: 15%;
-  min-width: 100px; /* Taille minimale pour ne pas disparaître */
-  max-width: 200px; /* Taille maximale */
+  min-width: 100px;
+  max-width: 200px;
   margin: -10px;
 }
 
-
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-         .container0 {
-max-width: 1200px;
+.container0 {
+ max-width: 1200px;
  margin: 0 auto;
  padding: 10px 40px;
- }
+}
 
  .header {
  text-align: center;
  margin-bottom: 10px;
- }
+}
 
  .header h2 {
  font-size: 2.2em;
@@ -214,116 +202,64 @@ max-width: 1200px;
  letter-spacing: 2px;
  margin-bottom: 10px;
  color: #333;
- }
+}
 
  .header p {
  font-size: 1.1em;
  color: #666;
-line-height: 1.5;
- }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 10px;
-        }
+ line-height: 1.5;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
 
-        /* Section Bistro */
-        .bistro-section {
-            background: linear-gradient(135deg, #f5f3f0 0%, #ebe8e3 100%);
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-        }
+.reach-out-button {
+    background: #2c2c2c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    margin: 10px 0;
+}
 
-        .bistro-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+.reach-out-button1 {
+    background-color: #45261d;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    width: fit-content;
+    margin-top: 10px;
+}
 
-        .bistro-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .bistro-image {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .bistro-image:hover {
-            transform: translateY(-5px);
-        }
-
-        .bistro-image img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .bistro-text {
-            padding: 0 10px;
-        }
-
-        .bistro-title {
-            font-size: 2.2rem;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-            color: #2c2c2c;
-        }
-
-        .bistro-subtitle {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2px;
-            letter-spacing: 1px;
-        }
-
-        .bistro-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 2px;
-        }
-
-        .price-section {
-            margin-bottom: 4px;
-        }
-
-        .price {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #2c2c2c;
-            margin-bottom: 1px;
-        }
-
-        .price-details {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 5px;
-        }
-
-        
-         
-
-.BU1-CH { /* Logo principal dans la section d'accueil */
+.BU1-CH {
   width: 10%;
-  min-width: 100px; /* Taille minimale pour ne pas disparaître */
-  max-width: 200px; /* Taille maximale */
+  min-width: 100px;
+  max-width: 200px;
   margin-bottom: -15px;
 }
 
 .BU-CH1{
   padding: 10px 40px;
-  background-color: white; /* Couleur de fond pour la section contact */
+  background-color: white;
   margin: 5px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #45261d; /* Texte blanc sur fond marron */
+  color: #45261d;
   text-align: center;
 }
 .BU-CH1 h3{
@@ -339,265 +275,73 @@ line-height: 1.5;
     text-align: center;
 }
 .equipements-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .section-title {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 50px;
-            font-weight: 300;
-        }
-        
-            .equipements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 30px;
-            justify-items: center;
-        }
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
 
-        .equipement-card {
-            background-color: #f8f9fa;
-            border-radius: 20px;
-            padding: 40px 20px;
-            width: 250px;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.equipements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
 
-        .equipement-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+.equipement-card {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 40px 20px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .icon-container {
-            width: 80px;
-            height: 80px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
+.equipement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
 
-        .icon {
-            font-size: 40px;
-            color: #666;
-        }
+.icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-        .equipement-text {
-            color: #333;
-            font-size: 16px;
-            line-height: 1.4;
-            font-weight: 500;
-        }
+.icon {
+    font-size: 40px;
+    color: #666;
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-            
-            .equipements-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .equipement-card {
-                width: 85%;
-                height: 150px;
-                padding: 25px 15px;
-            }
-            
-            .icon-container {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 15px;
-            }
-            
-            .icon {
-                font-size: 30px;
-            }
-            
-            .equipement-text {
-                font-size: 14px;
-            }
-        }
-
-.reach-out-button {
-           background: #2c2c2c;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: fit-content; /* S'adapte au contenu */
-            margin: 10px 0;
-        }
-
-  .reach-out-button1 {
-            background-color: #45261d;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-            width: fit-content; /* S'adapte au contenu */
-            margin-top: 10px;
-        }
-
-
- /* Section Bar */
-        .bar-section {
-            background: linear-gradient(180deg, white 30%, #f4e9cd 90%);
-            padding: 10px 0;
-            
-        }
-
-        .bar-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: normal;
-            color: #2c2c2c;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .bar-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 5px;
-        }
-
-        .bar-item {
-           
-            border-radius: 10px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.01);
-            transition: transform 0.3s ease;
-        }
-
-        .bar-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .bar-item h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #2c2c2c;
-        }
-
-       .bar-item h4 {
-            font-size: 1.3rem;
-            color: #666;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-
-        .bar-item p {
-            font-size: 1.1rem;
-            line-height: 1.4;
-            color: #555;
-        }
-
-        .bar-image1 {
-            width: 85%;
-            height: 130px;
-            border-radius: 12px;
-            object-fit: cover;
-            margin-top: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .bar-image1:hover {
-            transform: scale(1.05);
-        }
-        .bar-image {
-            width: 90%;
-            height: 200px;
-            border-radius: 12px;
-            object-fit: cover;
-            margin-top: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .bar-image:hover {
-            transform: scale(1.05);
-        }
-
-        .beach-bar {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .beach-bar-text h3 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            color: #2c2c2c;
-        }
-
-        .beach-bar-text h4 {
-            font-size: 1.4rem;
-            color: #666;
-            margin-bottom: 25px;
-            font-weight: normal;
-        }
-
-        .beach-bar-text p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #555;
-        }
-
-        .beach-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-        }
-
-        .beach-image img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .beach-image:hover img {
-            transform: scale(1.1);
-        }
-
-
-
-/* GALERIE DIMAGE */ 
+.equipement-text {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+}
 
 .BU2{
   padding: 30px 20px;
-  background-color: #45261d; /* Couleur de fond pour la section contact */
+  background-color: #45261d;
   margin: 0px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: white; /* Texte blanc sur fond marron */
+  color: white;
   text-align: center;
 }
 .BU2 h2{
@@ -634,16 +378,13 @@ line-height: 1.5;
 
 .gallery-item img {
     width: 100%;
-    height: 200px; /* Hauteur fixe pour les vignettes */
-    object-fit: cover; /* Assure que l'image couvre l'espace sans être déformée */
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
 
-
-
-/* Styles pour la Lightbox */
 .lightbox {
-    display: none; /* Caché par défaut */
+    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -651,7 +392,7 @@ line-height: 1.5;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9); /* Fond semi-transparent noir */
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
 }
@@ -661,7 +402,7 @@ line-height: 1.5;
     display: block;
     max-width: 90%;
     max-height: 90%;
-    object-fit: contain; /* L'image s'adapte sans être coupée */
+    object-fit: contain;
 }
 
 .close-btn, .prev-btn, .next-btn {
@@ -700,31 +441,29 @@ line-height: 1.5;
 }
 
 
-  /* Styles généraux du footer */
 .footer {
-    background-color: white; /* Couleur de fond verte foncée */
+    background-color: white;
     color: #45261d;
-    font-family: "Revalia"; 
+    font-family: "Revalia";
 }
 
-/* Section supérieure du footer (localisation, réservations, plateformes) */
 .footer-top {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    flex-wrap: wrap; /* Permet aux sections de passer à la ligne sur de petits écrans */
-    margin-bottom: 0px; /* Espace entre la section du haut et la section du bas (logo/nom) */
+    flex-wrap: wrap;
+    margin-bottom: 0px;
 }
-.footerr { 
-            text-align: center; 
-            padding: 2rem; 
-            background-color: #020c1b; 
-            color: #8892b0; 
-        } 
+.footerr {
+    text-align: center;
+    padding: 2rem;
+    background-color: #020c1b;
+    color: #8892b0;
+}
 
 .footer-section {
-    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
-    text-align: center; /* Alignement du texte à gauche par défaut */
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .footer-section h3 {
@@ -735,14 +474,13 @@ line-height: 1.5;
 }
 
 .footer-section p {
-       font-family: "Montserrat";
-      font-size: 1.1em;
-     color: #555;
+    font-family: "Montserrat";
+    font-size: 1.1em;
+    color: #555;
 }
 .footersectionblog{
-    margin-bottom: 20px; /* Espace sous chaque section sur petits écrans */
-    text-align: justify; /* Alignement du texte à gauche par défaut */
-
+    margin-bottom: 20px;
+    text-align: justify;
 }
 .footersectionblog h3 {
     text-align: center;
@@ -754,10 +492,10 @@ line-height: 1.5;
     text-align: center;
     color: white;
     margin: 0;
-} 
+}
 .footersectionblog a{
      font-family: "Montserrat";
-      font-size: 1.1em;
+     font-size: 1.1em;
      color: #CE7650;
 }
 
@@ -765,109 +503,32 @@ line-height: 1.5;
     color: inherit;
     text-decoration: none;
 }
-/* Styles pour les icônes des plateformes */
 .platform-icons {
     display: flex;
     align-items: center;
 }
 
 .platform-icons img {
-    height: 40px; /* Taille des icônes */
-    margin-right: 20px; /* Espace entre les icônes */
-
+    height: 40px;
+    margin-right: 20px;
 }
-/* Section inférieure du footer (logo) */
 .footer-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Permet au logo et au texte de passer à la ligne si nécessaire */
+    flex-wrap: wrap;
 }
 
 .footer-logo {
     width: 300px;
-    height: auto; /* Hauteur du logo, ajustez selon vos besoins */
-    margin-right: 15px; /* Espace entre le logo et le texte "BUHANOR" */
+    height: auto;
+    margin-right: 15px;
 }
 
-
-/* Media queries pour la responsivité (facultatif mais recommandé) */
-@media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column; /* Empile les sections verticalement sur les petits écrans */
-        align-items: center; /* Centre les sections empilées */
-    }
-
-    .footer-section {
-        width: 100%; /* Chaque section prend toute la largeur */
-        text-align: center; /* Centre le texte des sections */
-    }
-
-    .platform-icons {
-        justify-content: center; /* Centre les icônes sur petits écrans */
-
-    }
-
-    .footer-logo {
-        margin-right: 0; /* Pas de marge à droite quand empilé */
-        margin-bottom: 10px; /* Marge sous le logo quand empilé */
-    }
-}
-/* Responsive Design */
-        @media (max-width: 768px) {
-            .bistro-content,
-            .bar-content,
-            .beach-bar {
-                grid-template-columns: 1fr;
-                gap: 10px;
-                display: block;
-            }
-
-            .bistro-images {
-                width: 90%;
-                height: 210px;
-                margin-left: 45px;
-                margin-right: 0;
-              
-            }
-
-            .bistro-title {
-                font-size: 1.8rem;
-            }
-            .bistro-content{
-              font-size: 1.3rem;  
-            }
-            .bistro-description{
-               font-size: 1rem;
-               line-height: 1.8rem;
-            }
-
-            .bar-title {
-                font-size: 1.5rem;
-            }
-            .bar-image1{
-                width: 45%;
-                height: 150px;
-            }
-
-            .price {
-                font-size: 2.5rem;
-            }
-
-            .bar-item {
-                padding: 30px;
-            }
-            .bar-item h3{
-                font-size: 1.6rem;
-            }
-        }
-
-       /* Smooth scroll */
 html {
     scroll-behavior: smooth;
 }
 
-/* Animation sur le défilement */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -880,191 +541,27 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
-/* Media queries pour la responsivité (facultatif mais recommandé) */
-@media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column; /* Empile les sections verticalement sur les petits écrans */
-        align-items: center; /* Centre les sections empilées */
-    }
-
-    .footer-section {
-        width: 100%; /* Chaque section prend toute la largeur */
-        text-align: center; /* Centre le texte des sections */
-    }
-
-    .platform-icons {
-        justify-content: center; /* Centre les icônes sur petits écrans */
-
-    }
-    .footer-logo {
-        margin-right: 0; /* Pas de marge à droite quand empilé */
-        margin-bottom: 10px; /* Marge sous le logo quand empilé */
-    }
-}
-
-
-/* Media Queries pour les écrans plus petits */
 
 @media (max-width: 1250px) {
-
     .nav-links{
         margin: 5px 40px;
         font-size: 1.4em;
     }
-
+}
 
 @media (max-width: 999px) {
-    .E-CH P{
-        padding: 0 2px;
-    }
-    .E-CH h1{
-        font-size: 2.2em;
-    }
-     
     .equipement-card {
         width: 85%;
         height: 150px;
         padding: 25px 15px;
     }
-
-}
-
-
-@media (max-width: 799px) {
-     .hero{
-        height: 280px;
-     }
-     .header {
- text-align: center;
- margin-bottom: 10px;
- }
-
- .header h2 {
- font-size: 1.2em;
- font-weight: bold;
- letter-spacing: 2px;
- margin-bottom: 10px;
- color: #333;
- }
-
- .header p {
- font-size: 1em;
- color: #666;
-line-height: 1.4;
- }
-
-    .BU-CH h3{
-        font-size: 1.em;
-        padding: 0 5px;
-  
-    }
-
-    .BU-CH h4{
-        font-size: 1em;
-    }
-
-    .BU-CH P{
-        font-size: 0.9em;
-        padding: 0 10px;
-    
-    }
-
-    .BU1-CH { /* Logo principal dans la section d'accueil */
-      width: 10%;
-      height: 21%;
-      
-     }
-
-    /* CSS POUR CHAMBRES COTE A COTE */
-
-.COTEaCOTE{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-}
-
-
-
-.E-CH2{
-   width: 45%;
-   height: auto;
-   object-fit: cover;
-
-}
-
-.E-CH{
-  padding: 10px 40px;
-  margin:  12px 15px;
-  
-}
-
-.E-CH h1{
-    font-size: 2.em;
-  
-  
-}
-.E-CH h2{
-    font-size: 1.em;
- 
-}
-
-
-.E-CH P{
-    font-size: 0.9em;
-   padding: 0px;
-   margin: 0px;
-}
-
-.BU-CH{
-  padding: 5px 5px;
-  
-  margin: 5px auto;
-  
-}
-
-.BU-CH1{
-  padding: 5px 5px;
-  
-  margin: 5px auto;
-  
-}
-.BU-CH1 h3{
-    font-size: 1.em;
-}
-
-.BU-CH1 h2{
-    font-size: 1.2em;
-}
-
-.BU-CH1 p{
-    font-size: 0.9em;
-    text-align: center;
-}
-
-
-.BU2{
-  padding: 15px 10px;  
-}
-.BU2 h2{
-    font-size: 1.6em;
-    
-}
-.BU2 p{
-    font-size: 1em;
-}
-
- .gallery-container {
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-}
-@media (max-width: 999px) {
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
         background-color:#45261d;
         position: absolute;
-        top: 70px; /* Ajustez selon la hauteur réelle de .navbar */
+        top: 70px;
         right: 0;
         text-align: center;
         padding: 20px 0;
@@ -1102,7 +599,7 @@ line-height: 1.4;
     .nav-links.active {
         display: flex;
         padding: 20px 0;
-        MARGIN-TOP: -5%;
+        margin-top: -5%;
     }
     li {
         font-size: 0.9rem;
@@ -1112,4 +609,496 @@ line-height: 1.4;
     .brand-logo img {
         width: 100px;
     }
+     .hero{
+        height: 280px;
+     }
+     .header h2 {
+         font-size: 1.2em;
+     }
+     .header p {
+         font-size: 1em;
+         line-height: 1.4;
+     }
+
+    .BU-CH1 h3{
+        font-size: 1em;
+        padding: 0 5px;
+    }
+    .BU-CH1 h2{
+        font-size: 1.2em;
+    }
+    .BU-CH1 P{
+        font-size: 0.9em;
+        padding: 0 10px;
+    }
+    .BU1-CH {
+      width: 10%;
+      height: 21%;
+     }
+    .BU-CH1{
+      padding: 5px 5px;
+      margin: 5px auto;
+    }
+    .BU-CH1 p{
+        font-size: 0.9em;
+        text-align: center;
+    }
+    .BU2{
+      padding: 15px 10px;
+    }
+    .BU2 h2{
+        font-size: 1.6em;
+    }
+    .BU2 p{
+        font-size: 1em;
+    }
+     .gallery-container {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        width: 100%;
+        text-align: center;
+    }
+    .platform-icons {
+        justify-content: center;
+    }
+    .footer-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+     .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+     }
+     .equipements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+     }
+     .equipement-card {
+        width: 85%;
+        height: 150px;
+        padding: 25px 15px;
+     }
+     .icon-container {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+     }
+     .icon {
+        font-size: 30px;
+     }
+     .equipement-text {
+        font-size: 14px;
+     }
+}
+
+/* ========================================= */
+/* ==   STYLES TABLEAU COMPARATIF CHAMBRES == */
+/* ========================================= */
+
+.chambre-comparatif {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.comparatif-titre {
+    text-align: center;
+    font-size: 1.8em;
+    color: var(--couleur-primaire-foncee);
+    margin-bottom: 25px;
+    font-family: "Revalia", sans-serif;
+}
+
+.table-responsive-comparatif {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.chambre-comparatif table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    background-color: #fff;
+}
+
+.chambre-comparatif th,
+.chambre-comparatif td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    vertical-align: middle;
+}
+
+.chambre-comparatif th {
+    background-color: var(--couleur-primaire-foncee);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5px;
+    border-color: var(--couleur-primaire-foncee);
+}
+
+.chambre-comparatif td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--couleur-texte-sombre);
+    background-color: #f8f8f8;
+    padding-left: 20px;
+}
+.chambre-comparatif td:first-child i {
+    margin-right: 8px;
+    color: var(--couleur-accent-marron);
+    width: 20px;
+    text-align: center;
+}
+
+.chambre-comparatif tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+.chambre-comparatif .oui {
+    color: #28a745;
+    font-weight: bold;
+}
+.chambre-comparatif .non {
+    color: #dc3545;
+}
+
+.chambre-comparatif tfoot td {
+    border: none;
+    padding-top: 20px;
+    background-color: #fff;
+}
+
+.chambre-comparatif .reach-out-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    background-color: var(--couleur-accent-marron);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease;
+    margin: 0;
+}
+
+.chambre-comparatif .reach-out-button:hover {
+    background-color: var(--couleur-primaire-foncee);
+}
+
+@media (max-width: 768px) {
+    .chambre-comparatif {
+        padding: 20px 10px;
+        margin: 20px auto;
+    }
+    .comparatif-titre {
+        font-size: 1.5em;
+    }
+    .chambre-comparatif th,
+    .chambre-comparatif td {
+        padding: 10px 8px;
+        font-size: 0.85em;
+    }
+    .chambre-comparatif table {
+        min-width: auto;
+    }
+     .chambre-comparatif td:first-child {
+        padding-left: 10px;
+     }
+     .chambre-comparatif .reach-out-button {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+}
+
+/* ========================================= */
+/* == NOUVELLE PRÉSENTATION ÉPURÉE CHAMBRES == */
+/* ========================================= */
+
+.chambres-presentation-epuree {
+    padding: 60px 15px;
+}
+
+.chambre-epuree {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 16px;
+    margin-bottom: 50px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.chambre-epuree.reverse {
+    flex-direction: row-reverse;
+}
+
+.chambre-epuree-images {
+    flex: 1 1 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    height: 400px;
+}
+
+.chambre-epuree-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.chambre-epuree-details {
+    flex: 1 1 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chambre-epuree-details .chambre-badge {
+    position: static;
+    align-self: flex-start;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.chambre-badge.premium { background-color: #c8a2c8; }
+.chambre-badge.confort { background-color: #6495ED; }
+.chambre-badge.eco { background-color: #90EE90; }
+.chambre-badge.jour { background-color: #FFD700; color: #333; }
+.chambre-badge.bar-interieur { background-color: #A0522D; }
+.chambre-badge.bar-plage { background-color: #4682B4; }
+
+.chambre-epuree-details h2 {
+    font-family: "Revalia", sans-serif;
+    font-size: 2em;
+    color: var(--couleur-primaire-foncee);
+    margin-bottom: 5px;
+}
+
+.chambre-epuree-details h3 {
+    font-size: 1.1em;
+    color: var(--couleur-accent-marron);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.chambre-epuree-details p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.chambre-epuree-caracteristiques {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+    font-size: 0.85em;
+    color: #666;
+}
+
+.chambre-epuree-caracteristiques span {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+.chambre-epuree-caracteristiques i {
+    margin-right: 8px;
+    color: var(--couleur-accent-marron);
+    width: 16px;
+    text-align: center;
+}
+
+.chambre-epuree-prix {
+    margin-bottom: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.chambre-epuree-prix strong {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--couleur-primaire-foncee);
+    margin-right: 5px;
+}
+
+.chambre-epuree-prix small {
+    display: block;
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.bouton-reserver-epure {
+    display: inline-block;
+    background-color: var(--couleur-accent-marron);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+}
+
+.bouton-reserver-epure:hover {
+    background-color: var(--couleur-primaire-foncee);
+    transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* ==   SECTION DETENTE IMMERSIVE (BARS)   == */
+/* ========================================= */
+
+.section-detente {
+    padding: 60px 15px;
+}
+
+.section-titre-detente {
+    text-align: center;
+    font-size: 2em;
+    color: var(--couleur-primaire-foncee);
+    margin-bottom: 40px;
+    font-family: "Revalia", sans-serif;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-titre-detente::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--couleur-texte-clair);
+    border-radius: 2px;
+}
+
+.detente-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carte-detente {
+    position: relative;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.carte-detente-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carte-detente:hover .carte-detente-bg {
+    transform: scale(1.05);
+}
+
+.carte-detente-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+}
+
+.carte-detente-text h3 {
+    font-family: "Revalia", sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.carte-detente-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    max-width: 80%;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* === CORRECTIONS RESPONSIVE === */
+@media (max-width: 992px) {
+    .chambre-epuree,
+    .chambre-epuree.reverse {
+        flex-direction: column;
+    }
+
+    .chambre-epuree-images {
+        height: 300px; /* Hauteur ajustée pour tablettes */
+        width: 100%;
+    }
+
+    .chambre-epuree-details {
+        padding: 30px;
+    }
+     .chambre-epuree-details h2 {
+        font-size: 1.8em;
+     }
+}
+
+@media (max-width: 768px) {
+    .section-titre, .section-titre-detente {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 576px) {
+    .chambres-presentation-epuree {
+        padding: 30px 10px;
+    }
+    .chambre-epuree-images {
+        grid-template-columns: 1fr 1fr; /* On garde les deux colonnes */
+        height: 200px; /* Hauteur réduite pour mobile */
+    }
+    .chambre-epuree-details {
+        padding: 20px;
+    }
+    .chambre-epuree-details h2 {
+        font-size: 1.6em;
+    }
+     .chambre-epuree-prix strong {
+        font-size: 1.8em;
+     }
+     .bouton-reserver-epure {
+        width: 100%;
+        text-align: center;
+     }
 }
