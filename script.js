@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== MENU HAMBURGER =====
+    // ===== MENU HAMBURGER (S'applique à toutes les pages) =====
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navLinks = document.querySelector('.nav-links');
 
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         hamburgerMenu.addEventListener('click', toggleMenu);
 
+        // Ferme le menu si on clique en dehors
         document.addEventListener('click', (event) => {
             if (!navLinks.contains(event.target) && !hamburgerMenu.contains(event.target) && navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
@@ -20,48 +21,50 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Ferme le menu après avoir cliqué sur un lien (pour la navigation sur une seule page)
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                hamburgerMenu.classList.remove('open');
-                hamburgerMenu.setAttribute('aria-expanded', 'false');
+                if (navLinks.classList.contains('active')) {
+                    toggleMenu();
+                }
             });
         });
     }
 
-    // ===== GESTION DE LA VIDÉO RESPONSIVE =====
+    // ===== NAVBAR INTELLIGENTE (S'applique à toutes les pages) =====
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        document.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // ===== GESTION DE LA VIDÉO RESPONSIVE (Page d'accueil uniquement) =====
     const videoElement = document.getElementById('responsiveVideo');
-    const posterImage = document.querySelector('.video-poster');
-    
     if (videoElement) {
-        let currentVideoSrc = ''; // Variable pour suivre la source actuelle
+        const posterImage = document.querySelector('.video-poster');
+        let currentVideoSrc = '';
 
-        videoElement.addEventListener('canplay', () => {
-            if (posterImage) {
-                posterImage.classList.add('hidden');
-            }
-        });
-
-        videoElement.addEventListener('play', () => {
-            if (posterImage) {
-                posterImage.classList.add('hidden');
-            }
-        });
-
-        function setVideoSource() {
-            const mobileVideoSrc = 'sunset-plage-cap-skirring.mp4';
-            const desktopVideoSrc = 'AA.mp4';
-            const newSrc = window.innerWidth <= 968 ? mobileVideoSrc : desktopVideoSrc;
-            
+        const setVideoSource = () => {
+            const newSrc = window.innerWidth <= 968 ? 'sunset-plage-cap-skirring.mp4' : 'AA.mp4';
             if (newSrc !== currentVideoSrc) {
                 videoElement.src = newSrc;
                 videoElement.load();
                 currentVideoSrc = newSrc;
-                if (posterImage) {
-                    posterImage.classList.remove('hidden');
-                }
+                if (posterImage) posterImage.classList.remove('hidden');
             }
-        }
+        };
+
+        videoElement.addEventListener('canplay', () => {
+            if (posterImage) posterImage.classList.add('hidden');
+        });
+        videoElement.addEventListener('play', () => {
+            if (posterImage) posterImage.classList.add('hidden');
+        });
 
         let resizeTimeout;
         window.addEventListener('resize', () => {
@@ -69,47 +72,30 @@ document.addEventListener('DOMContentLoaded', function() {
             resizeTimeout = setTimeout(setVideoSource, 250);
         });
 
-        setVideoSource(); // Appel initial
+        setVideoSource();
     }
 
-    // ===== CARROUSEL POUR LES PROMOTIONS =====
+    // ===== CARROUSEL POUR LES PROMOTIONS (Page d'accueil uniquement) =====
     if (document.querySelector('.promo-swiper')) {
         new Swiper('.promo-swiper', {
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '#promotions .swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '#promotions .swiper-button-next',
-                prevEl: '#promotions .swiper-button-prev',
-            },
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            pagination: { el: '#promotions .swiper-pagination', clickable: true },
             breakpoints: {
                 320: { slidesPerView: 1, spaceBetween: 15 },
-                640: { slidesPerView: 1, spaceBetween: 20 },
                 768: { slidesPerView: 2, spaceBetween: 25 },
                 1024: { slidesPerView: 3, spaceBetween: 30 },
             }
         });
     }
 
-    // ===== CARROUSEL POUR LES AVIS CLIENTS =====
+    // ===== CARROUSEL POUR LES AVIS CLIENTS (Page d'accueil uniquement) =====
     if (document.querySelector('.reviews-swiper')) {
         new Swiper('.reviews-swiper', {
-            loop: true,
-            autoplay: {
-                delay: 6000, // Durée légèrement différente pour désynchroniser
-                disableOnInteraction: false,
-            },
+            loop: false, // Corrigé pour éviter l'avertissement
+            autoplay: { delay: 6000, disableOnInteraction: false },
             slidesPerView: 1,
             spaceBetween: 30,
-            pagination: {
-                el: '.reviews-section .swiper-pagination',
-                clickable: true,
-            },
+            pagination: { el: '.reviews-section .swiper-pagination', clickable: true },
             breakpoints: {
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 }
@@ -117,7 +103,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== ANIMATIONS AU DÉFILEMENT (FADE-IN) - CORRIGÉ =====
+    // ===== CARROUSEL POUR LE BLOG (Page d'accueil uniquement) =====
+    if (document.querySelector('.blog-swiper')) {
+        new Swiper('.blog-swiper', {
+            loop: false, // Corrigé pour éviter l'avertissement
+            autoplay: { delay: 7000, disableOnInteraction: false },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            pagination: { el: '.blog-preview-section .swiper-pagination', clickable: true },
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1200: { slidesPerView: 3, spaceBetween: 40 }
+            }
+        });
+    }
+
+    // ===== ANIMATIONS AU DÉFILEMENT (FADE-IN) =====
     const fadeInElements = document.querySelectorAll('.fade-in');
     if (fadeInElements.length > 0) {
         const fadeObserver = new IntersectionObserver((entries, observer) => {
@@ -133,84 +134,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===== LIGHTBOX (Galerie d'images) =====
-    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryItems = document.querySelectorAll('.gallery-item');
     const lightbox = document.getElementById('lightbox');
-    
+
     if (galleryItems.length > 0 && lightbox) {
         const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.querySelector('.close-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
+        const closeBtn = lightbox.querySelector('.close-btn');
+        const prevBtn = lightbox.querySelector('.prev-btn');
+        const nextBtn = lightbox.querySelector('.next-btn');
+        let currentImageIndex;
+        
+        // On récupère les sources des images de la galerie
+        const images = Array.from(galleryItems).map(item => item.querySelector('img').src);
 
-        if (lightboxImg && closeBtn && prevBtn && nextBtn) {
-            let currentImageIndex = 0;
-            const images = Array.from(galleryItems).map(img => img.dataset.src || img.src);
+        const openLightbox = (index) => {
+            currentImageIndex = index;
+            lightboxImg.src = images[currentImageIndex];
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
 
-            const openLightbox = (index) => {
-                currentImageIndex = index;
-                lightboxImg.src = images[currentImageIndex];
-                lightbox.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            };
+        const closeLightbox = () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = '';
+        };
 
-            const closeLightbox = () => {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = '';
-            };
+        const showNextImage = () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            lightboxImg.src = images[currentImageIndex];
+        };
 
-            const navigateLightbox = (direction) => {
-                currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-                lightboxImg.src = images[currentImageIndex];
-            };
+        const showPrevImage = () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            lightboxImg.src = images[currentImageIndex];
+        };
 
-            galleryItems.forEach((item, index) => {
-                item.addEventListener('click', () => openLightbox(index));
-            });
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => openLightbox(index));
+        });
 
-            closeBtn.addEventListener('click', closeLightbox);
-            prevBtn.addEventListener('click', () => navigateLightbox(-1));
-            nextBtn.addEventListener('click', () => navigateLightbox(1));
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeLightbox();
-            });
-        }
-    }
-
-    // ===== NAVBAR INTELLIGENTE AU DÉFILEMENT =====
-    document.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-});
-// ===== CARROUSEL POUR LES ARTICLES DE BLOG =====
-    if (document.querySelector('.blog-swiper')) {
-        new Swiper('.blog-swiper', {
-            loop: true,
-            autoplay: {
-                delay: 7000, // Une vitesse un peu plus lente pour laisser le temps de lire
-                disableOnInteraction: false,
-            },
-            slidesPerView: 1,
-            spaceBetween: 30,
-            pagination: {
-                el: '.blog-preview-section .swiper-pagination',
-                clickable: true,
-            },
-            // Responsive: change le nombre de slides visibles selon la taille de l'écran
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30
-                },
-                1200: {
-                    slidesPerView: 3,
-                    spaceBetween: 40
-                }
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (nextBtn) nextBtn.addEventListener('click', showNextImage);
+        if (prevBtn) prevBtn.addEventListener('click', showPrevImage);
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
             }
         });
     }
+});
