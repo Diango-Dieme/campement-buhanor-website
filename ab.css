@@ -247,13 +247,17 @@ li:before {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
-    z-index: 2; /* L'image est au-dessus de la vidéo */
-    transition: opacity 0.5s ease-in-out; /* Ajoute une transition pour une disparition en douceur */
+    object-fit: cover;
+    z-index: 2;
+    /* Transition plus rapide ou à supprimer si elle pose problème */
+    transition: opacity 0.3s ease-out;
+    opacity: 1; /* Visible par défaut */
 }
 
 .video-poster.hidden {
     opacity: 0;
+    /* Optionnel: Rendre l'élément non interactif une fois caché */
+    pointer-events: none;
 }
 
 #responsiveVideo {
