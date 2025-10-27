@@ -945,97 +945,103 @@ li:before {
     transform: translateY(-50%);
 }
 
-
-  
-/* ========== NOUVELLE SECTION BLOG HAUT DE GAMME ========== */
+/* ========== SECTION BLOG HAUT DE GAMME (Styles Réduits) ========== */
 .blog-preview-section {
-    max-width: 1400px;
+    max-width: 1200px; /* Largeur max légèrement réduite */
     margin: 0 auto;
     position: relative;
-    padding: 80px 20px;
-    overflow: hidden; /* Empêche les décorations de créer des barres de défilement */
+    padding: 60px 20px; /* Padding vertical réduit */
+    overflow: hidden;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 50px; /* Marge inférieure réduite */
     position: relative;
 }
 
 .section-header h2 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    /* Taille de police légèrement réduite pour grands écrans */
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Taille max réduite */
     font-weight: 800;
     background: linear-gradient(135deg, #CE7650, #8F543E);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; /* Fallback pour les anciens navigateurs */
-    margin-bottom: 20px;
-    letter-spacing: -2px;
+    color: transparent;
+    margin-bottom: 15px; /* Marge inférieure réduite */
+    letter-spacing: -1px; /* Espacement lettres ajusté */
     animation: fadeInDown 0.8s ease-out;
 }
 
 .section-header .subtitle {
-    font-size: clamp(1rem, 2vw, 1.3rem);
+     /* Taille de police légèrement réduite */
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem); /* Taille max réduite */
     color: #8F543E;
     font-weight: 300;
     letter-spacing: 0.5px;
     animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-.blog-preview-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 40px;
-    margin-bottom: 80px;
+/* === Carrousel Swiper pour le Blog === */
+.blog-swiper {
+    width: 100%;
+    padding-bottom: 50px; /* Espace pagination réduit */
+}
+
+.blog-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .blog-card {
     position: relative;
     background: #ffffff;
-    border-radius: 24px;
+    border-radius: 18px; /* Coins moins arrondis */
     overflow: hidden;
     text-decoration: none;
     color: #45261d;
-    border: 2px solid rgba(206, 118, 80, 0.1);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(206, 118, 80, 0.1); /* Bordure plus fine */
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1); /* Transition légèrement plus rapide */
     animation: fadeInScale 0.6s ease-out both;
-    box-shadow: 0 4px 20px rgba(69, 38, 29, 0.08);
+    box-shadow: 0 3px 15px rgba(69, 38, 29, 0.06); /* Ombre plus subtile */
+    width: 100%;
+    max-width: 380px; /* Largeur maximale réduite pour les cartes */
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-card:nth-child(1) { animation-delay: 0.1s; }
 .blog-card:nth-child(2) { animation-delay: 0.2s; }
 .blog-card:nth-child(3) { animation-delay: 0.3s; }
 
+/* Effet au survol (identique) */
 .blog-card::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    border-radius: 24px;
-    padding: 2px;
+    inset: -1px; /* Ajusté pour bordure 1px */
+    border-radius: 18px; /* Ajusté */
+    padding: 1px; /* Ajusté */
     background: linear-gradient(135deg, #CE7650, #8F543E);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     -webkit-mask-composite: xor;
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.4s ease; /* Transition plus rapide */
 }
-
-.blog-card:hover::before {
-    opacity: 1;
-}
-
+.blog-card:hover::before { opacity: 1; }
 .blog-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 50px rgba(69, 38, 29, 0.15),
-                0 0 60px rgba(206, 118, 80, 0.1);
+    transform: translateY(-8px); /* Levée réduite */
+    box-shadow: 0 12px 30px rgba(69, 38, 29, 0.12), /* Ombre ajustée */
+                0 0 40px rgba(206, 118, 80, 0.08);
 }
 
 .image-wrapper {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 200px; /* Hauteur de l'image réduite */
     overflow: hidden;
     background: #fdf3f1;
 }
@@ -1044,162 +1050,119 @@ li:before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Transition ajustée */
 }
-
-.blog-card:hover img {
-    transform: scale(1.1);
-}
+.blog-card:hover img { transform: scale(1.08); } /* Zoom légèrement réduit */
 
 .image-overlay {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: linear-gradient(180deg, transparent 0%, rgba(248, 237, 235, 0.3) 100%);
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    opacity: 0; transition: opacity 0.4s ease; /* Transition plus rapide */
 }
-
-.blog-card:hover .image-overlay {
-    opacity: 1;
-}
+.blog-card:hover .image-overlay { opacity: 1; }
 
 .blog-card-content {
-    padding: 32px;
-    position: relative;
-    z-index: 2;
-    background: #ffffff;
+    padding: 24px; /* Padding interne réduit */
+    position: relative; z-index: 2; background: #ffffff;
+    flex-grow: 1; display: flex; flex-direction: column;
 }
 
 .blog-card-content h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    line-height: 1.3;
-    letter-spacing: -0.5px;
-    color: #45261d;
+    font-size: 1.3rem; /* Taille titre réduite */
+    font-weight: 700; margin-bottom: 12px; /* Marge réduite */
+    line-height: 1.3; letter-spacing: -0.5px; color: #45261d;
     transition: all 0.3s ease;
 }
-
 .blog-card:hover h4 {
     background: linear-gradient(135deg, #CE7650, #8F543E);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
 .blog-card-content p {
-    color: #8F543E;
-    line-height: 1.7;
-    margin-bottom: 24px;
-    font-size: 0.95rem;
+    color: #8F543E; line-height: 1.6; /* Hauteur de ligne ajustée */
+    margin-bottom: 20px; /* Marge réduite */
+    font-size: 0.9rem; /* Taille texte réduite */
+    flex-grow: 1;
 }
 
 .read-more {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #CE7650;
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    transition: gap 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    display: inline-flex; align-items: center; gap: 6px; /* Espace réduit */
+    color: #CE7650; font-weight: 600; font-size: 0.85rem; /* Taille réduite */
+    letter-spacing: 0.5px; transition: gap 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    margin-top: auto;
 }
-
-.blog-card:hover .read-more {
-    gap: 16px;
-}
+.blog-card:hover .read-more { gap: 12px; } /* Espace ajusté */
 
 .read-more::after {
-    content: '→';
-    font-size: 1.2rem;
+    content: '→'; font-size: 1.1rem; /* Taille flèche ajustée */
     transition: transform 0.3s ease;
 }
+.blog-card:hover .read-more::after { transform: translateX(4px); }
 
-.blog-card:hover .read-more::after {
-    transform: translateX(4px);
+/* Pagination Swiper (styles de base) */
+.blog-swiper .swiper-pagination-bullet {
+    background: var(--couleur-neutre-grise, #AFA099);
+    width: 8px; /* Taille réduite */
+    height: 8px; /* Taille réduite */
+    opacity: 0.7; /* Opacité ajustée */
+}
+.blog-swiper .swiper-pagination-bullet-active {
+    background: var(--couleur-accent-marron, #8F543E);
+    width: 10px; /* Taille ajustée */
+    height: 10px; /* Taille ajustée */
+    opacity: 1;
 }
 
 .cta-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 40px; /* Marge supérieure réduite */
 }
 
+/* Bouton CTA (styles de base) */
 .cta-wrapper .reach-out-button1 {
-    position: relative;
-    padding: 20px 60px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #fff;
+    position: relative; padding: 16px 50px; /* Padding réduit */
+    font-size: 1rem; /* Taille réduite */
+    font-weight: 700; color: #fff;
     background: linear-gradient(135deg, #CE7650, #8F543E);
-    border: none;
-    border-radius: 50px;
-    text-decoration: none;
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 8px 30px rgba(206, 118, 80, 0.25);
+    border: none; border-radius: 50px; text-decoration: none; cursor: pointer;
+    overflow: hidden; transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 6px 20px rgba(206, 118, 80, 0.2); /* Ombre ajustée */
     letter-spacing: 0.5px;
 }
-.cta-wrapper .reach-out-button1 span {
-    position: relative;
-    z-index: 1;
-}
-
+.cta-wrapper .reach-out-button1 span { position: relative; z-index: 1; }
 .cta-wrapper .reach-out-button1:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 15px 50px rgba(206, 118, 80, 0.4);
+    transform: translateY(-3px) scale(1.03); /* Effet réduit */
+    box-shadow: 0 10px 35px rgba(206, 118, 80, 0.3); /* Ombre ajustée */
 }
-.cta-wrapper .reach-out-button1:active {
-    transform: translateY(-2px) scale(1.02);
-}
+.cta-wrapper .reach-out-button1:active { transform: translateY(-1px) scale(1.01); } /* Effet réduit */
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* Animations (identiques) */
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 1200px) {
-    .blog-preview-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
-    }
-}
-
+/* === Media Queries (Ajustées pour la réduction) === */
 @media (max-width: 768px) {
-    .blog-preview-section {
-        padding: 40px 16px;
-    }
-    .section-header {
-        margin-bottom: 50px;
-    }
-    .blog-preview-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    .image-wrapper {
-        height: 220px;
-    }
-    .blog-card-content {
-        padding: 24px;
-    }
-    .cta-wrapper .reach-out-button1 {
-        padding: 18px 40px;
-        font-size: 1rem;
-        width: 100%;
-        max-width: 320px;
-    }
+    .blog-preview-section { padding: 30px 16px; } /* Padding réduit */
+    .section-header { margin-bottom: 40px; } /* Marge réduite */
+    .image-wrapper { height: 180px; } /* Hauteur réduite pour tablette */
+    .blog-card-content { padding: 20px; } /* Padding réduit */
+    .blog-card { max-width: 90%; border-radius: 16px; } /* Coins ajustés */
+    .cta-wrapper .reach-out-button1 { padding: 14px 35px; font-size: 0.9rem; } /* Bouton ajusté */
 }
+
+@media (max-width: 576px) {
+    .section-header h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); } /* Titre ajusté pour mobile */
+    .section-header .subtitle { font-size: clamp(0.8rem, 1.8vw, 1rem); } /* Sous-titre ajusté */
+    .blog-card { max-width: 100%; border-radius: 14px; } /* Coins ajustés */
+    .image-wrapper { height: 160px; } /* Hauteur image mobile réduite */
+    .blog-card-content h4 { font-size: 1.1rem; } /* Titre carte mobile réduit */
+    .blog-card-content p { font-size: 0.85rem; } /* Texte carte mobile réduit */
+    .read-more { font-size: 0.8rem; } /* Lien mobile réduit */
+}
+
+/* Pas besoin de media query pour >= 1600px car max-width est déjà appliqué sur .blog-card */
   /* Styles généraux du footer */
 .footer {
     background-color: white; /* Couleur de fond verte foncée */

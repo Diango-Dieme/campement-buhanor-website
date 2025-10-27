@@ -133,13 +133,33 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.blog-swiper')) {
         new Swiper('.blog-swiper', {
             loop: false,
-            autoplay: { delay: 7000, disableOnInteraction: false, pauseOnMouseEnter: true },
-            slidesPerView: 1, // 1 article visible par défaut (mobile)
-            spaceBetween: 30, // Espace entre les articles
-            pagination: { el: '.blog-preview-section .swiper-pagination', clickable: true },
+            autoplay: {
+                delay: 7000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true
+            },
+            slidesPerView: 1, // Mobile par défaut
+            spaceBetween: 20, // Espace réduit pour mobile
+            pagination: {
+                el: '.blog-preview-section .swiper-pagination',
+                clickable: true
+            },
             breakpoints: {
-                768: { slidesPerView: 2, spaceBetween: 30 }, // 2 articles sur tablette
-                1200: { slidesPerView: 3, spaceBetween: 40 } // 3 articles sur grand desktop
+                // Tablette
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25 // Espace réduit pour tablette
+                },
+                // Desktop
+                1200: {
+                    slidesPerView: 3,
+                    spaceBetween: 30 // Espace réduit pour desktop
+                },
+                // Très grand écran
+                1600: {
+                    slidesPerView: 3, // Garde 3 slides
+                    spaceBetween: 30 // Espace réduit pour très grand écran
+                }
             },
             a11y: {
                 prevSlideMessage: 'Article précédent',
